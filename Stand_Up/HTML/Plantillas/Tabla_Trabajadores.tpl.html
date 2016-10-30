@@ -1,0 +1,17 @@
+<h3>Trabajadores</h3>
+<table id="tabla_trabajdores_{$id_tabla}">
+	<tr>
+		<th>ID</th>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Correo</th>
+	</tr>
+	{foreach from=$trabajadores key=em item=trabajador}
+	<tr>
+		<td>{$trabajador.idtrabajadores}</td>
+		<td>{$trabajador.nombres}</td>
+		<td>{$trabajador.apellidos}</td>
+		<td>{$trabajador.correo}</td>
+	</tr>
+	{/foreach}
+</table>
