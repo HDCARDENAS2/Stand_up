@@ -1,0 +1,17 @@
+<h3>Horarios</h3>
+<table id="tabla_horarios_{$id_tabla}">
+	<tr>
+		<th>ID</th>
+		<th>Día inicio</th>
+		<th>Día fin</th>
+		<th>Hora</th>
+	</tr>
+	{foreach from=$horarios key=em item=horario}
+	<tr>
+		<td>{$horario.idhorarioes}</td>
+		<td>{$horario.nombres}</td>
+		<td>{$horario.apellidos}</td>
+		<td>{$horario.correo}</td>
+	</tr>
+	{/foreach}
+</table>
