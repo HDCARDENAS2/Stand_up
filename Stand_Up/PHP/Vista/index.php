@@ -11,7 +11,7 @@ require_once('/UI_Trabajadores.php');
 	$htmlTrabajadores  = "";
 	$htmlTrabajador    = "";
 //==================================
-//Logica 
+//Logica Vista
 //==================================
     //Consulta objetos
 	$trabajadores     = $obj_cs_trabaja->fn_consulta_empleados();
