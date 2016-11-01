@@ -7,7 +7,7 @@ class ConsultasTrabajadores {
 	/** @Autor	Raphael Lara
 	 *  @Mail	lara_d_kli@hotmail.com
 	 */
-	function fn_consulta_trabajador( $bd = null ){
+	function fn_consulta_empleados( $bd = null ){
 		$array = null;
 
 		if($bd == null){
@@ -23,7 +23,7 @@ class ConsultasTrabajadores {
 		}
 		/** En caso de errores */
 		if($bd->Errores()){
-			$bd->printErrores('ConsultasTrabajadores::fn_consulta_trabajador');
+			$bd->printErrores('ConsultasTrabajadores::fn_consulta_empleados');
 		}
 
 		$bd->Cerrar();
@@ -33,7 +33,7 @@ class ConsultasTrabajadores {
 	/** @Autor	Raphael Lara
 	 *  @Mail	lara_d_kli@hotmail.com
 	 */
-	function fn_consulta_trabajador_by_codigo( $codigo, $bd = null ){
+	function fn_consulta_empleado ( $codigo, $bd = null ){
 		$array = null;
 
 		if($bd == null){
@@ -51,7 +51,7 @@ class ConsultasTrabajadores {
 		}
 		/** En caso de errores */
 		if($bd->Errores()){
-			$bd->printErrores('ConsultasTrabajadores::fn_consulta_trabajador_by_codigo');
+			$bd->printErrores('ConsultasTrabajadores::fn_consulta_empleado');
 		}
 
 		$bd->Cerrar();

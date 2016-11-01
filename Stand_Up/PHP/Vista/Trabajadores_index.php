@@ -1,8 +1,8 @@
 <?php
 
 require_once('../Config/header.php');
-require_once('../Modelo/ConsultasHorarios.php');
-require_once('/UI_Horarios.php');
+require_once('../Modelo/ConsultasTrabajadores.php');
+require_once('/UI_Trabajadores.php');
 	$tpl_principal		= new SmartyExt();
 	$obj_cs_trabaja		= new ConsultasTrabajador();
 	$obj_ui_trabaja		= new UI_Trabajadores();
