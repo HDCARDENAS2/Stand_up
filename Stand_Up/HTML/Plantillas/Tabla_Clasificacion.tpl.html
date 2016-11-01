@@ -1,0 +1,15 @@
+<h3>Tareas</h3>
+<table id="tabla_clasificacion_{$id_tabla}">
+	<tr>
+		<th>ID</th>
+		<th>Descripcion</th>	
+		
+	</tr>
+	{foreach from=$clasificacion_rutina key=em item=clasificacion}
+	<tr>
+		<td>{$clasificacion.idclasificacion_rutina}</td>
+		<td>{$clasificacion.descripcion}</td>
+		
+	</tr>
+	{/foreach}
+</table>
