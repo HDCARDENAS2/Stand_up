@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Stand Up</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="../../CSS/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo"><strong>Stand Up</a>
+
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div >
+					<h1><a>Stand Up Software para Pausas Activas</a></h1>
+				</div>
+			</section>
+		<!-- body -->
+			<div >
+					<h3>Registro de rutinas</h3>
+				</div>	
+			<form>
+				<input type="file" name="url_imagen" placeholder="Url de imagen">
+				<input type="text" name="duracion" placeholder="Duracion">
+				<select id="idclasificacion_rutina">
+                                <option value="1"> Seleccione</option>
+                                </select>
+				<input type="button" name="guardar" value="Guardar">
+			</form>
+		
+			{$htmlRutinas}
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy; <a>Stand Up 2016</a>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../../JS/jquery.min.js"></script>
+			<script src="../../JS/jquery.scrolly.min.js"></script>
+			<script src="../../JS/skel.min.js"></script>
+			<script src="../../JS/util.js"></script>
+			<script src="../../JS/main.js"></script>
+
+	</body>
+</html>
