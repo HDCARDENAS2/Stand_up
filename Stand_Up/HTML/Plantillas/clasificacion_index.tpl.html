@@ -10,23 +10,26 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="logo"><strong>Stand Up</a>
-
+		      <ul>
+		        <li><a href="index.php" >Stand Up</a></li>
+                <li><a href="Horarios_index.php"> Horarios</a></li>
+                <li><a href="tareas_index.php"> Tareas</a></li>
+                <li><a href="Trabajadores_index.php"> Trabajadores</a></li>
+                <li><a href="Rutinas_index.php"> Rutinas</a></li>
+                <li><a href="clasificacion_index.php"> Clasificacion</a></li>
+               </ul>
 			</header>
 
-		<!-- Banner -->
-			<section id="banner">
-				<div >
-					<h1><a>Stand Up Software para Pausas Activas</a></h1>
-				</div>
-			</section>
+
 		<!-- body -->
-			<div >
-					<h3>Registro de Clasificacion de Rutinas</h3>
+			<div style="padding-top: 50px;">
+					<h3 align="center">Registro de Clasificacion de Rutinas</h3>
 				</div>	
 			<form>
 			<input type="text" name="descripcion" placeholder="Descripcion">	
-			
+			<div align="center" style="padding-top: 10px">
+			 <input  type="button" name="guardar" value="Guardar">
+			</div>
 			</form>
 		
 			{$htmlclasificacion}

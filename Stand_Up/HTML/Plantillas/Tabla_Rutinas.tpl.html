@@ -1,4 +1,4 @@
-<h3>Rutinas</h3>
+<h3 align="center">Rutinas</h3>
 <table id="tabla_rutina_{$id_tabla}">
 	<tr>
 		<th>ID</th>
@@ -10,10 +10,10 @@
 	</tr>
 	{foreach from=$rutinas key=em item=rutina}
 	<tr>
-		<td>{$rutina.idrutina}</td>
-		<td>{$rutina.url}</td>
+		<td>{$rutina.idrutinas}</td>
+		<td>{$rutina.url_imagen}</td>
                 <td>{$rutina.duracion}</td>
-		<td>{$rutina.clasificacion_rutinas_idclasificacion_rutina}</td>
+		<td>{$rutina.clasificacion_rutina_idclasificacion_rutina}</td>
 	</tr>
 	{/foreach}
 </table>

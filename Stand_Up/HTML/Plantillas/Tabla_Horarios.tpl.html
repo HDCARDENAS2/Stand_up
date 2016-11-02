@@ -1,4 +1,4 @@
-<h3>Horarios</h3>
+<h3 align="center">Horarios</h3>
 <table id="tabla_horarios_{$id_tabla}">
 	<tr>
 		<th>ID</th>
@@ -8,10 +8,10 @@
 	</tr>
 	{foreach from=$horarios key=em item=horario}
 	<tr>
-		<td>{$horario.idhorarioes}</td>
-		<td>{$horario.nombres}</td>
-		<td>{$horario.apellidos}</td>
-		<td>{$horario.correo}</td>
+		<td>{$horario.idhorarios}</td>
+		<td>{$horario.dia_inicio}</td>
+		<td>{$horario.dia_fin}</td>
+		<td>{$horario.hora}</td>
 	</tr>
 	{/foreach}
 </table>

@@ -22,7 +22,7 @@ require_once('/UI_Rutinas.php');
 //==================================
 	//Plantilla principal
 	$tpl_principal->assign("htmlRutinas",$htmlRutinas);
-	$tpl_principal->display('../../html/plantillas/rutinas_index.tpl.html');
+	$tpl_principal->display('../../html/plantillas/rutina_index.tpl.html');
 //==================================
 
 
