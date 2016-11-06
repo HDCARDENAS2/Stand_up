@@ -1988,6 +1988,7 @@
 	}
 
 	input[type="text"],
+	input[type="time"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -2048,6 +2049,7 @@
 		}
 
 	input[type="text"],
+	input[type="time"],
 	input[type="password"],
 	input[type="email"],
 	select {
@@ -2147,6 +2149,7 @@
 	}
 
 	input[type="text"],
+	input[type="time"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -2731,6 +2734,7 @@
 			}
 
 			.wrapper.style1 input[type="text"],
+			.wrapper.style1 input[type="time"],
 			.wrapper.style1 input[type="password"],
 			.wrapper.style1 input[type="email"],
 			.wrapper.style1 select,
@@ -2939,6 +2943,7 @@
 			}
 
 			.wrapper.style2 input[type="text"],
+			.wrapper.style2 input[type="time"],
 			.wrapper.style2 input[type="password"],
 			.wrapper.style2 input[type="email"],
 			.wrapper.style2 select,
@@ -3418,6 +3423,7 @@
 		}
 
 		#banner input[type="text"],
+		#banner input[type="time"],
 		#banner input[type="password"],
 		#banner input[type="email"],
 		#banner select,
