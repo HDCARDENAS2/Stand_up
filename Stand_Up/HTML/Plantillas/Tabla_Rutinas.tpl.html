@@ -5,15 +5,14 @@
 		<th>Url de imagen</th>
 		<th>Duracion</th>
 		<th>ID Clasificacion</th>
-	
-		
 	</tr>
+	
 	{foreach from=$rutinas key=em item=rutina}
 	<tr>
-		<td>{$rutina.idrutinas}</td>
+		<td>{$rutina.id_rutinas}</td>
 		<td>{$rutina.url_imagen}</td>
-                <td>{$rutina.duracion}</td>
-		<td>{$rutina.clasificacion_rutina_idclasificacion_rutina}</td>
+		<td>{$rutina.duracion}</td>
+		<td>{$rutina.id_clasificacion}</td>
 	</tr>
 	{/foreach}
 </table>

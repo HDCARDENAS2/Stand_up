@@ -1,0 +1,13 @@
+<h3 align="center">Areas</h3>
+<table id="tabla_arealaboral_{$id_tabla}">
+	<tr>
+		<th>ID</th>
+		<th>Descripcion</th>
+	</tr>
+	{foreach from=$arealaboral key=em item=area_laboral}
+	<tr>
+		<td>{$area_laboral.id_area_laboral}</td>
+		<td>{$area_laboral.descripcion}</td>
+	</tr>
+	{/foreach}
+</table>

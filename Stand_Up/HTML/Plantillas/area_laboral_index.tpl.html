@@ -22,22 +22,19 @@
 		
 		<!-- body -->
 		<div style="padding-top: 50px;">
-			<h3 align="center" >Registro de rutinas</h3>
-		</div>	
+			<h3 align="center">Registro de Areas Laborales</h3>
+		</div>
 		
 		<form>
-			<input type="file" name="url_imagen" placeholder="Url de imagen">
-			<input type="text" name="duracion" placeholder="Duracion">
-			<select id="idclasificacion_rutina">
-				<option value="1"> Seleccione</option>
-			</select>
+			<input id="id_area_laboral" name="id_area_laboral" type="text" placeholder="ID">
+			<input id="descripcion" name="descripcion" type="text" placeholder="Descripcion">
 			<div align="center" style="padding-top: 10px">
 				<input  type="button" name="guardar" value="Guardar">
 			</div>
 		</form>
 		
-		{$htmlRutinas}
-			
+		{$htmlAreaLaboral}
+		
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="copyright">
@@ -51,6 +48,6 @@
 		<script src="../../JS/skel.min.js"></script>
 		<script src="../../JS/util.js"></script>
 		<script src="../../JS/main.js"></script>
-
+		
 	</body>
 </html>

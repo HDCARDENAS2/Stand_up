@@ -2,16 +2,16 @@
 <table id="tabla_horarios_{$id_tabla}">
 	<tr>
 		<th>ID</th>
-		<th>Día inicio</th>
-		<th>Día fin</th>
+		<th>Dia inicio</th>
+		<th>Dia fin</th>
 		<th>Hora</th>
 	</tr>
 	{foreach from=$horarios key=em item=horario}
 	<tr>
-		<td>{$horario.idhorarios}</td>
+		<td>{$horario.id_horarios}</td>
 		<td>{$horario.dia_inicio}</td>
 		<td>{$horario.dia_fin}</td>
-		<td>{$horario.hora}</td>
+		<td>{$horario.hora_ejecucion}</td>
 	</tr>
 	{/foreach}
 </table>

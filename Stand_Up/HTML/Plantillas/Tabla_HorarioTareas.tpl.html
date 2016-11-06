@@ -1,0 +1,16 @@
+<h3 align="center">Tareas</h3>
+<table id="tabla_horario_tarea_{$id_tabla}">
+	<tr>
+		<th>ID</th>
+		<th>ID tarea</th>
+		<th>ID Rutina</th>
+	</tr>
+	
+	{foreach from=$horariotareas key=em item=horariotarea}
+	<tr>
+		<td>{$horariotarea.id_horario_tarea}</td>
+		<td>{$horariotarea.id_horarios}</td>
+		<td>{$horariotarea.id_rutinas}</td>
+	</tr>
+	{/foreach}
+</table>
