@@ -1,0 +1,31 @@
+<h3 style="padding-top: 10px" align="center">Rutinas area</h3>
+<table id="tabla_rutinasarea_{$id_tabla}" name="tabla_rutinasarea_{$id_tabla}">
+	<tr>
+		<th width="20%">ID</th>
+		<th width="20%">Rutina</th>
+		<th width="20%">Area laboral</th>
+		<th width="20%">Estado</th>
+		<th width="10%"></th>
+	</tr>
+	<tbody>
+	{foreach from=$lista_rutina_area key=em item=$rutinasarea}
+	<tr>
+		<td>{$rutinasarea.id_rutinas_area}
+		<input type="hidden"  name="id_rutinasarea_{$id_tabla}[]" value="{$rutinasarea.id_rutinas_area}" />
+		</td>
+		<td>
+		<select name="cmb_area_rutinasarea_{$id_tabla}[]">{$obj_html->DibujarCombo($lista_areas,$rutinasarea.id_area_laboral,true)}</select>
+		</td>
+		<td>
+	    <select name="cmb_rutina_rutinasarea_{$id_tabla}[]">{$obj_html->DibujarCombo($lista_rutinas,$rutinasarea.id_rutinas,true)}</select>
+		</td>
+		<td>
+		<select name="cmb_estado_rutinasarea_{$id_tabla}[]">{$obj_html->DibujarCombo($lista_estados,$rutinasarea.cod_estado,true)}</select>
+		</td>
+		<td>
+		<input type="button"  value="Guardar" onclick="fn_udapte_rutina_area(this.parentNode.parentNode.rowIndex,{$id_tabla});">
+		</td>
+	</tr>
+	{/foreach}
+	</tbody>
+</table>

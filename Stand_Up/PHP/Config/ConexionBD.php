@@ -39,7 +39,7 @@ class ConexionBD {
 	 * Esta funcion inicia la conexion
 	 */
 
-	function iniciar(){
+	function iniciar($autocoomit = false){
 
 			$this->Limpiar();
             //Se lee el archivo de configuracion
@@ -56,6 +56,7 @@ class ConexionBD {
 				$this->o_db = null;
 				return false;
 			}else{
+				mysqli_autocommit ($db,$autocoomit );
 				$this->o_db = $db;
 				return true;
 			}
@@ -284,13 +285,54 @@ class ConexionBD {
 	 * Esta fucion que imprime los errores 
 	 */
 	
-	function printErrores($clase){
-		echo $clase.'<br>';
-		foreach ($this->array_erros as $clave => $valor){
-			echo  $this->array_erros[$clave].'<br>';
+	function printErrores($clase,$ajax = null){
+		
+		$mensaje_final = "";
+		
+		if($ajax != null){
+			
+			$mensaje_final = $clase;
+			$ajax->setError($mensaje_final);
+			foreach ($this->array_erros as $clave => $valor){
+				$ajax->setError($this->array_erros[$clave]);
+			}
+			
+		}else{
+			$mensaje_final = $clase.'<br>';
+			foreach ($this->array_erros as $clave => $valor){
+				$mensaje_final.= $this->array_erros[$clave].'<br>';
+			}
+			echo $mesaje;
 		}
+		
 	}
+	
 
+	/*
+	 * @Autor Hernan Dario Cardenas
+	 * @Mail  dropimax@gmail.com
+	 * @Name Commit
+	 * @Date 06/11/2016
+	 *  Esta fucion hace commit a la transacion
+	 */
+	
+	function Commit(){
+		mysqli_commit($this->o_db);
+	}
+	
+
+	/*
+	 * @Autor Hernan Dario Cardenas
+	 * @Mail  dropimax@gmail.com
+	 * @Name RollBack
+	 * @Date 06/11/2016
+	 * Esta fucion hace rollback a la transacion
+	 */
+	
+	function RollBack(){
+		mysqli_rollback($this->o_db);
+	}
+	
 }
 
 ?>
