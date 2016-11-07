@@ -9,11 +9,13 @@ class UI_Horarios {
 	 * @mail 	crodriguez@gmail.com
 	 * @date	29/10/2016
 	 */
-	function DibujarTablaHorarios( $array, $id ){
-		$tpl_trabajador = new SmartyExt();
-		$tpl_trabajador->assign( "horarios", $array );
-		$tpl_trabajador->assign( "id_tabla", $id );
-		return $tpl_trabajador->fetch('../../html/plantillas/Tabla_Horarios.tpl.html');
+	function DibujarTablaHorarios( $array, $id, $dias_semana, $obj_html ){
+		$tpl_horarios = new SmartyExt();
+		$tpl_horarios->assign( "horarios", $array );
+		$tpl_horarios->assign( "id_tabla", $id );
+		$tpl_horarios->assign( "obj_html", $obj_html );
+		$tpl_horarios->assign( "dias_semana", $dias_semana );
+		return $tpl_horarios->fetch('../../html/plantillas/Tabla_Horarios.tpl.html');
 	}
 }
 

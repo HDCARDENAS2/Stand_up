@@ -39,7 +39,6 @@ class GestionHorarios {
 		}
 		//Cierre de conexion
 		$bd->Cerrar();
-		
 		return $array;
 	}
 	
@@ -69,13 +68,100 @@ class GestionHorarios {
 		}
 		//Errores
 		if($bd->Errores()){
-			$bd->printErrores('GestionHorarios::fn_consulta_horario');
+			$bd->printErrores('GestionHorarios::fn_consulta_horarios');
 		}
 	    //Cierre de conexion
 		$bd->Cerrar();
 	
 		return $array;
 	
+	}
+
+	/** @Autor	Cesar Rodriguez
+	 *  @Mail	crodriguez@gmail.com
+	 *  @Date   05/11/2016
+	 *  @Name   fn_insertar_horarios
+	 */
+	 
+	function fn_insertar_horarios($dia_inicio,$dia_fin, $hora, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('INSERT INTO horarios (dia_inicio,dia_fin, hora) VALUES(?,?,?);');
+			//Parametros
+			$bd->setParametro($dia_inicio);
+			$bd->setParametro($dia_fin);	
+			$bd->setParametro($hora);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_insertar_horarios::fn_consulta_horarios',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+	
+	
+	/** @Autor	Cesar Rodriguez
+	 *  @Mail	crodriguez@gmail.com
+	 *  @Date   05/11/2016
+	 *  @Name   fn_update_horariosBD
+	 */
+	
+	function fn_update_horariosBD($codigo,$dia_inicio,$dia_fin,$hora,$ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('UPDATE horarios SET dia_inicio=?,dia_fin=?,hora=? WHERE idhorarios=?;');
+			//Parametros
+			$bd->setParametro($dia_inicio);
+			$bd->setParametro($dia_fin);
+			$bd->setParametro($hora);
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_update_horariosBD::fn_consulta_horarios',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+
+	function diasSemana(){
+		$dias = ["lunes", "martes", "miercoles", "jueves","viernes", "sabado", "domingo"];
+		return $dias;
 	}
 }
 ?>

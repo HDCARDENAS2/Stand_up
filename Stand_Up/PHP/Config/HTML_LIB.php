@@ -53,6 +53,29 @@ class HTML_LIB{
 		}
 		return $html;
 	}
+
+	function DibujarComboCiudades($array,$select = null,$flag_sin_blanco = false){
+
+		$html = "";
+		
+		if( count($array)!= null){
+			if($flag_sin_blanco == false){
+				$html = '<option value="">Selecione</option>' ;
+			}
+
+			foreach ($array as $key => $value) {
+				$selected = "";
+				if( $select != null){
+					
+					if(trim($value) == trim($select) ){
+						$selected ="selected";
+					}
+				}
+				$html .= '<option '.$selected.' value="'.$value.'">'.$value.'</option>' ;
+			}
+		}
+		return $html;
+	}
 	
 	
 }
