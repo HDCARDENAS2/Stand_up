@@ -98,7 +98,7 @@ class GestionRutinasArea {
 		}
 		//Errores
 		if($bd->Errores()){
-			$bd->printErrores('fn_insertar_rutinasarea::fn_consulta_rutinasarea',$ajax);
+			$bd->printErrores('GestionRutinasArea::fn_insertar_rutinasarea',$ajax);
 		}
 		//Cierre de conexion
 		$bd->Cerrar();
@@ -140,7 +140,7 @@ class GestionRutinasArea {
 		}
 		//Errores
 		if($bd->Errores()){
-			$bd->printErrores('fn_update_rutinasarea::fn_consulta_rutinasarea',$ajax);
+			$bd->printErrores('GestionRutinasArea::fn_update_rutinasarea', $ajax);
 		}
 		//Cierre de conexion
 		$bd->Cerrar();
@@ -148,7 +148,5 @@ class GestionRutinasArea {
 		return $repuesta;
 	
 	}
-	
-
 }
 

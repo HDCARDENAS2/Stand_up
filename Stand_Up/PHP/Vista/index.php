@@ -17,8 +17,8 @@ require_once('/UI_Trabajadores.php');
 	$trabajadores     = $obj_cs_trabaja->fn_consulta_trabajadores();
 	$trabajador       = $obj_cs_trabaja->fn_consulta_trabajador(1);
 	//Tablas
-	$htmlTrabajadores = $obj_ui_trabaja->DibujarTablaTrabajadores( $trabajadores, 1 );
-	$htmlTrabajador   = $obj_ui_trabaja->DibujarTablaTrabajadores( $trabajador, 2 );
+// 	$htmlTrabajadores = $obj_ui_trabaja->DibujarTablaTrabajadores( $trabajadores, 1 );
+// 	$htmlTrabajador   = $obj_ui_trabaja->DibujarTablaTrabajadores( $trabajador, 2 );
 //==================================
 //Asignacion y pantilla
 //==================================

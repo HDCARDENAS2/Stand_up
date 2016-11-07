@@ -9,15 +9,7 @@
 	<body>
 		<!-- Header -->
 		<header id="header">
-			<ul>
-		        <li><a href="index.php" >Stand Up</a></li>
-				<li><a href="Vista_horarios_index.php"> Horarios</a></li>
-				<li><a href="Vista_horario_tareas_index.php"> Tareas</a></li>
-				<li><a href="Vista_trabajadores_index.php"> Trabajadores</a></li>
-				<li><a href="Vista_rutinas_index.php"> Rutinas</a></li>
-				<li><a href="Vista_clasificacion_index.php"> Clasificacion</a></li>
-				<li><a href="Vista_area_laboral_index.php"> Areas Laborales</a></li>
-			</ul>
+			{$menuhtml}
 		</header>
 		
 		<!-- body -->
@@ -25,17 +17,23 @@
 			<h3 align="center">Registro de Trabajadores</h3>
 		</div>
 		
-		<form>
+		<form  id="forma_registro_trabajador" name="forma_registro_trabajador" >
 			<input id="nombres" name="nombres" type="text" placeholder="Nombre">
 			<input id="apellidos" name="apellidos" type="text" placeholder="Apellido">
 			<input id="correo" name="correo" type="email" placeholder="Correo">
+			<label for="cmb_area_laboral" >Area Laboral</label>
+				<select id="cmb_area_laboral" name="cmb_area_laboral">{$obj_html->DibujarCombo($area_laboral)}</select>
 			<div align="center" style="padding-top: 10px">
-			<input  type="button" name="guardar" value="Guardar">
-			</div>
-			
+				<input type="button" name="guardar" value="Registrar" onclick="fn_registrar_trabajador()">
+			</div>	
 		</form>
 		
-		{$htmlTrabajadores}
+		<form id="forma_tabla_trabajadores" name="forma_tabla_trabajadores">
+			<input type="hidden" id="index_select_tabla" name="index_select_tabla" value="">
+			<input type="hidden" id="id_tabla" name="id_tabla" value="">
+			<!-- tabla -->
+			{$htmlTrabajadores}
+		</form>
 			
 		<!-- Footer -->
 		<footer id="footer">
@@ -50,6 +48,8 @@
 		<script src="../../JS/skel.min.js"></script>
 		<script src="../../JS/util.js"></script>
 		<script src="../../JS/main.js"></script>
+		<script src="../../JS/js_trabajadores.js"></script>
+		<script src="../../JS/GeneralAjax.js"></script>
 
 	</body>
 </html>

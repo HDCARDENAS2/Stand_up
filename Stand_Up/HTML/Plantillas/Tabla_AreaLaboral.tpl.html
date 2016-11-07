@@ -1,11 +1,25 @@
-<h3 align="center">Areas</h3>
-<table id="tabla_arealaboral_{$id_tabla}">
+<h3 style="padding-top: 10px" align="center">Areas</h3>
+<table id="tabla_arealaboral_{$id_tabla}" name="tabla_arealaboral_{$id_tabla}">
 	<tr>
-		<th>Descripcion</th>
+		<th width="5%">ID</th>
+		<th width="80%">Descripcion</th>
+		<th width="10%">Estado</th>
+		<th width="5%"></th>
 	</tr>
 	{foreach from=$arealaboral key=em item=area_laboral}
 	<tr>
-		<td>{$area_laboral.descripcion}</td>
+		<td>{$area_laboral.id_area_laboral}
+			<input type="hidden" name="id_area_laboral_{$id_tabla}[]" value="{$area_laboral.id_area_laboral}" />
+		</td>
+		<td>{$area_laboral.descripcion}<input type="hidden" name="descripcion_{$id_tabla}[]" value="{$area_laboral.descripcion}" /></td>
+		<td>
+			<select name="cmb_estado_area_laboral_{$id_tabla}[]">
+				{$obj_html->DibujarCombo( $lista_estados, $area_laboral.cod_estado, true )}
+			</select>
+		</td>
+		<td>
+			<input type="button"  value="Guardar" onclick="fn_update_area_laboral( this.parentNode.parentNode.rowIndex, {$id_tabla} );">
+		</td>
 	</tr>
 	{/foreach}
 </table>

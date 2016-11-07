@@ -8,7 +8,7 @@ class UI_Rutinas_area {
 	 *  @Mail	dropimax@gmail.com
 	 */
 	
-	function DibujarTablaRutinasArea( $array, $id, $obj_html,$lista_areas,$lista_rutinas,$lista_estados ){
+	function DibujarTablaRutinasArea( $array, $id, $obj_html, $lista_areas, $lista_rutinas, $lista_estados ){
 		$tpl_rutina_area = new SmartyExt();
 		$tpl_rutina_area->assign( "lista_rutina_area", $array );
 		$tpl_rutina_area->assign( "id_tabla", $id );

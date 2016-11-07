@@ -16,14 +16,14 @@ class GestionTrabajadores {
 
 		if($bd->iniciar()){
 			/** Sentencia */
-			$bd->setSentencia('select * from trabajadores where cod_estado = 1' );
+			$bd->setSentencia('select * from trabajadores' );
 			if($bd->Ejecutar()){
 				$array = $bd->getResutados();
 			}
 		}
 		/** En caso de errores */
 		if($bd->Errores()){
-			$bd->printErrores('GestionTrabajadore::fn_consulta_trabajadores');
+			$bd->printErrores('GestionTrabajadores::fn_consulta_trabajadores');
 		}
 
 		$bd->Cerrar();
@@ -42,7 +42,7 @@ class GestionTrabajadores {
 
 		if($bd->iniciar()){
 			/** Sentencia */
-			$bd->setSentencia('select * from trabajadores where id_trabajadores=? and cod_estado = 1');
+			$bd->setSentencia('select * from trabajadores where id_trabajadores=?');
 			$bd->setParametro($codigo);
 				
 			if($bd->Ejecutar()){
@@ -51,12 +51,90 @@ class GestionTrabajadores {
 		}
 		/** En caso de errores */
 		if($bd->Errores()){
-			$bd->printErrores('GestionTrabajadore::fn_consulta_trabajador');
+			$bd->printErrores('GestionTrabajadores::fn_consulta_trabajador');
 		}
 
 		$bd->Cerrar();
 		return $array;
 
+	}
+	
+	/** @autor	Raphael Lara
+	 *  @mail	lara_d_kli@hotmail.com
+	 *  @date   05/11/2016
+	 */
+	function fn_insertar_trabajador ( $cod_area_laboral, $nombres, $apellidos, $correo, $ajax = null, $bd = null ){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		
+		if($bd->iniciar()){
+			/** Sentecia */
+			$bd->setSentencia('INSERT INTO trabajadores ( id_area_laboral, nombres, apellidos, correo ) VALUES(?,?,?,?);');
+			/** Parametros */
+			$bd->setParametro($cod_area_laboral);
+			$bd->setParametro($nombres);
+			$bd->setParametro($apellidos);
+			$bd->setParametro($correo);
+			/** Ejecutamos */
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		/** Errores */
+		if($bd->Errores()){
+			$bd->printErrores('GestionTrabajadores::fn_insertar_trabajador', $ajax);
+		}
+		/** Cierre de la conexion */ 
+		$bd->Cerrar();
+	
+		return $repuesta;
+	}
+	
+	/** @autor	Raphael Lara
+	 *  @mail	lara_d_kli@hotmail.com
+	 *  @date   05/11/2016
+	 */
+	function fn_update_trabajador( $cod_trabajador, $cod_area_laboral, $nombres, $apellidos, $correo, $cod_estado, $ajax = null, $bd = null ){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		
+		if($bd->iniciar()){
+			/** Sentecia */
+			$bd->setSentencia('UPDATE trabajadores SET id_area_laboral=?, nombres=?, apellidos=?, correo=?, cod_estado=? WHERE id_trabajadores=?;');
+			/** Parametros */
+			$bd->setParametro($cod_area_laboral);
+			$bd->setParametro($nombres);
+			$bd->setParametro($apellidos);
+			$bd->setParametro($correo);
+			$bd->setParametro($cod_estado);
+			$bd->setParametro($cod_trabajador);
+			/** Ejecutamos */
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		/** Errores */
+		if($bd->Errores()){
+			$bd->printErrores('GestionTrabajadores::fn_update_trabajadores', $ajax);
+		}
+		/** Cierre de la conexion */ 
+		$bd->Cerrar();
+		
+		return $repuesta;
 	}
 }
 

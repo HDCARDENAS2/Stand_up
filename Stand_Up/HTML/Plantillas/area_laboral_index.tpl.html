@@ -9,16 +9,7 @@
 	<body>
 		<!-- Header -->
 		<header id="header">
-			<ul>
-		        <li><a href="index.php" >Stand Up</a></li>
-				<li><a href="Vista_horarios_index.php"> Horarios</a></li>
-				<li><a href="Vista_horario_tareas_index.php"> Tareas</a></li>
-				<li><a href="Vista_trabajadores_index.php"> Trabajadores</a></li>
-				<li><a href="Vista_rutinas_index.php"> Rutinas</a></li>
-				<li><a href="Vista_clasificacion_index.php"> Clasificacion</a></li>
-				<li><a href="Vista_area_laboral_index.php"> Areas Laborales</a></li>
-				<li><a href="Vista_rutinas_area_index.php"> Rutinas Area</a></li>
-			</ul>
+			{$menuhtml}
 		</header>
 		
 		<!-- body -->
@@ -26,14 +17,19 @@
 			<h3 align="center">Registro de Areas Laborales</h3>
 		</div>
 		
-		<form>
+		<form id="forma_registro_area_laboral" name="forma_registro_area_laboral">
 			<input id="descripcion" name="descripcion" type="text" placeholder="Descripcion">
 			<div align="center" style="padding-top: 10px">
-				<input  type="button" name="guardar" value="Guardar">
-			</div>
+				<input type="button" name="guardar" value="Registrar" onclick="fn_registrar_area_laboral()">
+			</div>	
 		</form>
 		
-		{$htmlAreaLaboral}
+		<form id="forma_tabla_area_laboral" name="forma_tabla_area_laboral">
+			<input type="hidden" id="index_select_tabla" name="index_select_tabla" value="">
+			<input type="hidden" id="id_tabla" name="id_tabla" value="">
+			<!-- tabla -->
+			{$htmlAreaLaboral}
+		</form>
 		
 		<!-- Footer -->
 		<footer id="footer">
@@ -48,6 +44,8 @@
 		<script src="../../JS/skel.min.js"></script>
 		<script src="../../JS/util.js"></script>
 		<script src="../../JS/main.js"></script>
+		<script src="../../JS/js_area_laboral.js"></script>
+		<script src="../../JS/GeneralAjax.js"></script>
 		
 	</body>
 </html>
