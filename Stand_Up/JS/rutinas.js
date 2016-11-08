@@ -24,16 +24,21 @@ function fn_registrar_rutinas(){
 	}
 
 	if(mensaje == ""){
-		subir_archivo();
         //peticion ajax
-		var respuesta = Ajax('forma_rutinas',
-				             '../Control/Add_rutinas.php');
-		
-		if(respuesta != null){
-			//subir_archivo();
-			alert('La Rutina se inserto correctamente');
-			//submit forma
-			forma_registro_rutinas.submit();
+        var formData = new FormData($('form')[0]);
+        var imagen = subirArchivo(formData);
+        $('#url_imagen').val(imagen);
+        
+        if(imagen != ""){
+			var respuesta = Ajax('forma_rutinas',
+					             '../Control/Add_rutinas.php');
+			
+			if(respuesta != null){
+				
+				alert('La Rutina se inserto correctamente');
+				//submit forma
+				forma_registro_rutinas.submit();
+			}
 		}
 	}else{
 		alert(mensaje);
@@ -65,35 +70,3 @@ function fn_update_rutinas(elemento,id){
 	}	
 
 }
-
-	function subir_archivo(){
-		console.log("subir archivo");
-	    var formData = new FormData($('form')[0]);
-	    $.ajax({
-	        url: '../../PHP/upload.php',  
-	        type: 'POST',
-	        xhr: function() {  
-	            var myXhr = $.ajaxSettings.xhr();
-	            if(myXhr.upload){ 
-	                myXhr.upload.addEventListener('progress',progressHandlingFunction, false); 
-	            }
-	            return myXhr;
-	        },
-	        //Ajax events
-	        //beforeSend: beforeSendHandler,
-	        success: completeHandler,
-	        //error: errorHandler,
-	        // Form data
-	        data: formData,
-	        //Options to tell jQuery not to process data or worry about content-type.
-	        cache: false,
-	        contentType: false,
-	        processData: false
-	    });
-
-	}
-
-	function completeHandler(data){
-		console.log(data);
-		$("#url_imagen").val(data['respuesta']);
-	}

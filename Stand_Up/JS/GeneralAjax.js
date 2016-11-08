@@ -52,3 +52,37 @@ function ErrorManagger(errores) {
 	}
 	 
 }
+
+function subirArchivo(formData){
+	console.log("subirArchivo");
+	var resultado = null;
+ 	$.ajax({
+	        url: '../../PHP/upload.php',  
+	        type: 'POST',
+	        async : false,
+	        xhr: function() {  
+	            var myXhr = $.ajaxSettings.xhr();
+	            if(myXhr.upload){ 
+	                //myXhr.upload.addEventListener('progress',progressHandlingFunction, false); 
+	            }
+	            return myXhr;
+	        },
+	        //Ajax events
+	        //beforeSend: beforeSendHandler,
+	        success: function(data){
+	        	resultado = data;
+		
+	        },
+	        //error: errorHandler,
+	        // Form data
+	        data: formData,
+	        //Options to tell jQuery not to process data or worry about content-type.
+	        cache: false,
+	        contentType: false,
+	        processData: false
+	    });
+ 	return  resultado;
+
+}
+
+

@@ -7,14 +7,19 @@ $o_gestion_rutina = new GestionRutinas();
 //Datos de la vista
 $forma = $_POST;
 
-//logica
+
+
 $duracion   = $forma['duracion'];
 $descripcion   = $forma['descripcion'];
 $url_imagen   = $forma['url_imagen'];
 $idclasificacion_rutina = $forma['idclasificacion_rutina'];
 if(!$o_gestion_rutina->fn_insertar_rutina($duracion, $url_imagen, $descripcion, $idclasificacion_rutina, $ajax)){
 	$ajax->setError("No se pudo insertar la Rutina.");
+}else {
+   $ajax->setError("No se pudo cargar el archivo");
 }
-//retorno objeto ajax*/
+
+
+//retorno objeto ajax
 $ajax->RetornarJSON();
 ?>
