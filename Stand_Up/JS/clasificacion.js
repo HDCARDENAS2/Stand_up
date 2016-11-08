@@ -56,4 +56,20 @@ function fn_udapte_clasificacion(elemento,id){
 		alert('La Clasificacion fue modificada correctamente');
 	}	
 
+
+}
+
+function fn_delete_clasificacion(elemento,id){
+	
+	elemento--;
+	$("#index_select_tabla").val(elemento);
+	$("#id_tabla").val(id);
+	    //peticion ajax
+	var respuesta = Ajax('forma_tabla_clasificacion_rutina',
+			             '../Control/Del_clasificacion.php');
+	
+	if(respuesta != null){
+		alert('La clasificacion fue eliminada correctamente');
+	}	
+
 }

@@ -149,6 +149,39 @@ class GestionHorarioTareas {
 		return $repuesta;
 	
 	}
+
+function fn_delete_horariotarea($codigo, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('DELETE FROM horario_tarea WHERE id_horario_tarea=?;');
+			//Parametros
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_delete_horariotarea::fn_consulta_horarios',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+
 	
 
 }
