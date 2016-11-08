@@ -64,3 +64,19 @@ function fn_udapte_horario_tarea(elemento,id){
 	}	
 
 }
+
+function fn_delete_horario_tarea(elemento,id){
+
+	elemento--;
+	$("#index_select_tabla").val(elemento);
+	$("#id_tabla").val(id);
+	
+    //peticion ajax
+	var respuesta = Ajax('forma_tabla_horario_tarea',
+			             '../Control/Del_horario_tarea.php');
+	
+	if(respuesta != null){
+		alert('El horario tarea fue eliminado correctamente');
+	}		
+
+}

@@ -148,6 +148,39 @@ function fn_insertar_clasificacion($descripcion,$ajax = null,$bd = null){
 		return $repuesta;
 	
 	}
+	function fn_delete_clasificaicon($codigo, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('DELETE FROM clasificacion_rutina WHERE id_clasificacion=?;');
+			//Parametros
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_update_horariosBD::fn_consulta_horarios',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+
+	
 
 }
 
