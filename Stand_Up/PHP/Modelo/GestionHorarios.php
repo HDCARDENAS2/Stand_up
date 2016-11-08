@@ -159,6 +159,44 @@ class GestionHorarios {
 	
 	}
 
+	/** @Autor	Cesar Rodriguez
+	 *  @Mail	crodriguez@gmail.com
+	 *  @Date   05/11/2016
+	 *  @Name   fn_delete_horariosBD
+	 */
+	
+	function fn_delete_horariosBD($codigo, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('DELETE FROM horarios WHERE id_horarios=?;');
+			//Parametros
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_update_horariosBD::fn_consulta_horarios',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+
 	function diasSemana(){
 		$dias = ["lunes", "martes", "miercoles", "jueves","viernes", "sabado", "domingo"];
 		return $dias;

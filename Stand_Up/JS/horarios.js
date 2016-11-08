@@ -1,6 +1,6 @@
 
 /**
- * Esta funcion registra rutina area
+ * Esta funcion registra rel horario
  *
  * @author Cesar Rodriguez
  *         @email crodriguez@gmail.com
@@ -34,7 +34,7 @@ function fn_registrar_horarios(){
 				             '../Control/Add_horarios.php');
 		
 		if(respuesta != null){
-			alert('La Rutina area se inserto correctamente');
+			alert('El horario se inserto correctamente');
 			//submit forma
 			forma_registro_rutinas_area.submit();
 		}	
@@ -45,7 +45,7 @@ function fn_registrar_horarios(){
 }
 
 /**
- * Esta funcion modifica rutina area
+ * Esta funcion modifica el horario
  *
  * @author Cesar Rodriguez
  *         @email crodriguez@gmail.com
@@ -64,7 +64,32 @@ function fn_update_horarios(elemento,id){
 			             '../Control/Mod_horarios.php');
 	
 	if(respuesta != null){
-		alert('La Rutina area fue modificada correctamente');
+		alert('El horario fue modificada correctamente');
+	}	
+
+}
+
+/**
+ * Esta funcion elimina el horario
+ *
+ * @author Cesar Rodriguez
+ *         @email crodriguez@gmail.com
+ *         @date 05/11/2016
+ * @access public
+ */
+
+function fn_delete_horario(elemento,id){
+	
+	elemento--;
+	$("#index_select_tabla").val(elemento);
+	$("#id_tabla").val(id);
+	console.log("actualizar");
+    //peticion ajax
+	var respuesta = Ajax('forma_tabla_horarios',
+			             '../Control/Del_horarios.php');
+	
+	if(respuesta != null){
+		alert('el horario fue eliminado correctamente');
 	}	
 
 }

@@ -17,15 +17,11 @@ $id_tabla   = $forma['id_tabla'];
 
 if($index != "" && $id_tabla != ""){
 	$codigo     = $forma['idhorarios_'.$id_tabla][$index];
-	$dia_inicio   = $forma['dia_inicio_'.$id_tabla][$index];
-	$dia_fin = $forma['dia_fin_'.$id_tabla][$index];
-	$hora = $forma['hora_'.$id_tabla][$index];
-	//$ajax->setError("No se pudo modificar la Rutina area.".$codigo);
 	
 	
 	
-	if(!$o_gestion_horario->fn_update_horariosBD($codigo,$dia_inicio,$dia_fin,$hora,$ajax)){
-		$ajax->setError("No se pudo modificar el horario.");
+	if(!$o_gestion_horario->fn_delete_horariosBD($codigo, $ajax)){
+		$ajax->setError("No se pudo eliminar el horario.");
 	}
 	
 	
