@@ -6,16 +6,20 @@
 		<th width="20%" >Dia fin</th>
 		<th width="20%" >Hora</th>
 		<th width="10%"></th>
+		<th width="10%"></th>
 	</tr>
 	{foreach from=$horarios key=em item=horario}
 	<tr>
-		<td>{$horario.idhorarios}</td>
-		<input type="hidden"  name="idhorarios_{$id_tabla}[]" value="{$horario.idhorarios}" />
+		<td>{$horario.id_horarios}</td>
+		<input type="hidden"  name="idhorarios_{$id_tabla}[]" value="{$horario.id_horarios}" />
 		<td><select name="dia_inicio_{$id_tabla}[]">{$obj_html->DibujarComboCiudades($dias_semana, $horario.dia_inicio, true)}</select> </td>
 		<td><select name="dia_fin_{$id_tabla}[]">{$obj_html->DibujarComboCiudades($dias_semana,$horario.dia_fin,true)}</select> </td>
-		<td><input type="time" name="hora_{$id_tabla}[]" id="hora" placeholder="Hora" value="{$horario.hora}"></td>
+		<td><input type="time" name="hora_{$id_tabla}[]" id="hora" placeholder="Hora" value="{$horario.hora_ejecucion}"></td>
 		<td>
 		<input type="button"  value="Guardar" onclick="fn_update_horarios(this.parentNode.parentNode.rowIndex,{$id_tabla});">
+		</td>
+		<td>
+		<input type="button"  value="Eliminar" class="delete" onclick="fn_delete_horario(this.parentNode.parentNode.rowIndex,{$id_tabla});">
 		</td>
 	</tr>
 	{/foreach}

@@ -93,7 +93,7 @@ class GestionHorarios {
 		//Inicio Conexion
 		if($bd->iniciar()){
 			//Sentecia
-			$bd->setSentencia('INSERT INTO horarios (dia_inicio,dia_fin, hora) VALUES(?,?,?);');
+			$bd->setSentencia('INSERT INTO horarios (dia_inicio,dia_fin, hora_ejecucion) VALUES(?,?,?);');
 			//Parametros
 			$bd->setParametro($dia_inicio);
 			$bd->setParametro($dia_fin);	
@@ -134,11 +134,49 @@ class GestionHorarios {
 		//Inicio Conexion
 		if($bd->iniciar()){
 			//Sentecia
-			$bd->setSentencia('UPDATE horarios SET dia_inicio=?,dia_fin=?,hora=? WHERE idhorarios=?;');
+			$bd->setSentencia('UPDATE horarios SET dia_inicio=?,dia_fin=?,hora_ejecucion=? WHERE id_horarios=?;');
 			//Parametros
 			$bd->setParametro($dia_inicio);
 			$bd->setParametro($dia_fin);
 			$bd->setParametro($hora);
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_update_horariosBD::fn_consulta_horarios',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+
+	/** @Autor	Cesar Rodriguez
+	 *  @Mail	crodriguez@gmail.com
+	 *  @Date   05/11/2016
+	 *  @Name   fn_delete_horariosBD
+	 */
+	
+	function fn_delete_horariosBD($codigo, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('DELETE FROM horarios WHERE id_horarios=?;');
+			//Parametros
 			$bd->setParametro($codigo);
 			//Se ejecuta la sentencia
 			if($bd->Ejecutar()){

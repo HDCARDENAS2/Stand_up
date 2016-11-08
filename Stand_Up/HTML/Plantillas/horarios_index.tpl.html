@@ -27,35 +27,20 @@
 			<h3 align="center">Registro de horarios</h3>
 		</div>	
 		<form id="forma_registro_horarios" id="forma_registro_horarios">
-			<!--<input type="text" name="dia_inicio" id="dia_inicio" placeholder="Día inicio">-->
+			
 			<select name="dia_inicio" id="dia_inicio">
-				<!--
-				<option value="">----Seleccione-----</option>
-				<option value="lunes">lunes</option>
-				<option value="martes">martes</option>
-				<option value="miercoles">miercoles</option>
-				<option value="jueves">jueves</option>
-				<option value="viernes">lunes</option>
-				<option value="sabado">sabado</option>-->
+				
 				{$obj_html->DibujarComboCiudades($dias_semana)}
 			</select>
 			<div id="validar_dia_inicio"></div>
-			<!--<input type="text" name="dia_fin" id="dia_fin" placeholder="Día fin">-->
-
+			
 			<select name="dia_fin" id="dia_fin">
-				<!--
-				<option value="">----Seleccione-----</option>
-				<option value="lunes">lunes</option>
-				<option value="martes">martes</option>
-				<option value="miercoles">miercoles</option>
-				<option value="jueves">jueves</option>
-				<option value="viernes">lunes</option>
-				<option value="sabado">sabado</option>-->
+				
 				{$obj_html->DibujarComboCiudades($dias_semana)}
 			</select>
 			<div id="validar_dia_fin"></div>
 
-			<input type="time" name="hora" id="hora" placeholder="Hora">
+			<input type="time" name="hora" id="hora" placeholder="Hora" step="1" >
 			<div id="validar_hora"></div>
 			<div align="center" style="padding-top: 10px">
 				<input  type="button" name="guardar" value="Guardar" id="guardar_horarios" onclick="fn_registrar_horarios()">
