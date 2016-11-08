@@ -37,7 +37,7 @@ function fn_registrar_rutinas(){
 				
 				alert('La Rutina se inserto correctamente');
 				//submit forma
-				forma_registro_rutinas.submit();
+				forma_rutinas.submit();
 			}
 		}
 	}else{

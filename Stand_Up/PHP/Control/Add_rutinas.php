@@ -15,8 +15,6 @@ $url_imagen   = $forma['url_imagen'];
 $idclasificacion_rutina = $forma['idclasificacion_rutina'];
 if(!$o_gestion_rutina->fn_insertar_rutina($duracion, $url_imagen, $descripcion, $idclasificacion_rutina, $ajax)){
 	$ajax->setError("No se pudo insertar la Rutina.");
-}else {
-   $ajax->setError("No se pudo cargar el archivo");
 }
 
 
