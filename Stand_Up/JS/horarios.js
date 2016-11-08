@@ -30,7 +30,7 @@ function fn_registrar_horarios(){
 	
 	if(mensaje == ""){
         //peticion ajax
-		var respuesta = Ajax('forma_tabla_horarios',
+		var respuesta = Ajax('forma_registro_horarios',
 				             '../Control/Add_horarios.php');
 		
 		if(respuesta != null){

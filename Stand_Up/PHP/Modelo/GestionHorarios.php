@@ -93,7 +93,7 @@ class GestionHorarios {
 		//Inicio Conexion
 		if($bd->iniciar()){
 			//Sentecia
-			$bd->setSentencia('INSERT INTO horarios (dia_inicio,dia_fin, hora) VALUES(?,?,?);');
+			$bd->setSentencia('INSERT INTO horarios (dia_inicio,dia_fin, hora_ejecucion) VALUES(?,?,?);');
 			//Parametros
 			$bd->setParametro($dia_inicio);
 			$bd->setParametro($dia_fin);	
@@ -134,7 +134,7 @@ class GestionHorarios {
 		//Inicio Conexion
 		if($bd->iniciar()){
 			//Sentecia
-			$bd->setSentencia('UPDATE horarios SET dia_inicio=?,dia_fin=?,hora=? WHERE idhorarios=?;');
+			$bd->setSentencia('UPDATE horarios SET dia_inicio=?,dia_fin=?,hora_ejecucion=? WHERE id_horarios=?;');
 			//Parametros
 			$bd->setParametro($dia_inicio);
 			$bd->setParametro($dia_fin);

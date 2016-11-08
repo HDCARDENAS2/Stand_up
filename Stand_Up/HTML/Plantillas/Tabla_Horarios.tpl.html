@@ -9,11 +9,11 @@
 	</tr>
 	{foreach from=$horarios key=em item=horario}
 	<tr>
-		<td>{$horario.idhorarios}</td>
-		<input type="hidden"  name="idhorarios_{$id_tabla}[]" value="{$horario.idhorarios}" />
+		<td>{$horario.id_horarios}</td>
+		<input type="hidden"  name="idhorarios_{$id_tabla}[]" value="{$horario.id_horarios}" />
 		<td><select name="dia_inicio_{$id_tabla}[]">{$obj_html->DibujarComboCiudades($dias_semana, $horario.dia_inicio, true)}</select> </td>
 		<td><select name="dia_fin_{$id_tabla}[]">{$obj_html->DibujarComboCiudades($dias_semana,$horario.dia_fin,true)}</select> </td>
-		<td><input type="time" name="hora_{$id_tabla}[]" id="hora" placeholder="Hora" value="{$horario.hora}"></td>
+		<td><input type="time" name="hora_{$id_tabla}[]" id="hora" placeholder="Hora" value="{$horario.hora_ejecucion}"></td>
 		<td>
 		<input type="button"  value="Guardar" onclick="fn_update_horarios(this.parentNode.parentNode.rowIndex,{$id_tabla});">
 		</td>
