@@ -3,14 +3,10 @@ require_once('../Config/CoreAjax.php');
 require_once('../Modelo/GestionHorarioTarea.php');
 //Se crea el objetos
 $ajax                  = new CoreAjax();
-$o_gestion_horario_tarea = new GestionHorarioTarea();
+$o_gestion_horario_tarea = new GestionHorarioTareas();
 //Datos de la vista
 $forma = $_POST;
 //logica
-
-
-
-
 $index      = $forma['index_select_tabla'];
 $id_tabla   = $forma['id_tabla'];
 

@@ -2,12 +2,9 @@
 require_once('../Config/header.php');
 require_once('../Config/HTML_LIB.php');
 require_once('../Modelo/GestionHorarioTarea.php');
-require_once('/UI_HorarioTareas.php');
 require_once('../Modelo/GestionHorarios.php');
 require_once('../Modelo/GestionRutinas.php');
-
-
-
+require_once('/UI_HorarioTareas.php');
 	/** Declaracion de variables */
     $tpl_principal     = new SmartyExt();
 	$obj_cs_horario_tareas    = new GestionHorarioTareas();
@@ -16,8 +13,6 @@ require_once('../Modelo/GestionRutinas.php');
 	$obj_rutinas        = new GestionRutinas();
 	$obj_horarios          = new GestionHorarios();
 	$htmlHorarioTareas  = "";
-
-
 	/** Consulta objetos */
 	$tareas     = $obj_cs_horario_tareas->fn_consulta_horariotareas();
 	$rutinas     = $obj_rutinas->fn_consulta_rutinas();

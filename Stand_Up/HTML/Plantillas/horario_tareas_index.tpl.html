@@ -14,7 +14,7 @@
 				<li><a href="Vista_horarios_index.php"> Horarios</a></li>
 				<li><a href="Vista_horario_tareas_index.php"> Tareas</a></li>
 				<li><a href="Vista_trabajadores_index.php"> Trabajadores</a></li>
-				<li><a href="Vista_rutinas_index.php"> Rutinas</a></li>
+				<li><a href="Vista_rutinas_index.php">Rutina</a></li>
 				<li><a href="Vista_clasificacion_index.php"> Clasificacion</a></li>
 				<li><a href="Vista_area_laboral_index.php"> Areas Laborales</a></li>
 				<li><a href="Vista_rutinas_area_index.php"> Rutinas Area</a></li>
@@ -28,7 +28,7 @@
 		
 		<form  id="forma_registro_horario_tarea" name="forma_registro_horario_tarea" >
 			
-            <label for="id_rutina" >Rutina</label>
+            <label for="id_rutina">Rutina</label>
                 <select id="id_rutina" name="id_rutina">{$obj_html->DibujarCombo($rutinas)}</select>
             <label for="id_horario" >Horario</label>
                 <select id="id_horario" name="id_horario">{$obj_html->DibujarCombo($horarios)}</select>
@@ -39,8 +39,7 @@
 			</form>
 			<form id="forma_tabla_horario_tarea" name="forma_tabla_horario_tarea">
 			   <input type="hidden" id="index_select_tabla" name="index_select_tabla" value="">
-			   <input type="hidden" id="id_tabla" name="id_tabla" value="">		
-		
+			   <input type="hidden" id="id_tabla" name="id_tabla" value="">			
 		
 		{$htmlHorarioTareas}
 		</form>

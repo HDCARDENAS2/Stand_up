@@ -37,7 +37,7 @@ class GestionRutinas {
 
 		$bd->Cerrar();
 		
-		print_r($array);
+		
 		return $array;
 	}
         

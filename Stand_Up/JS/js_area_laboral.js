@@ -6,18 +6,14 @@
  */
 function fn_registrar_area_laboral(){
 	
-	var cmb_rutina = $("#cmb_rutina_new").val();
-	var cmb_area   = $("#cmb_area_new").val();
+	var descripcion   = $("#descripcion").val();
 	
 	var mensaje = "";
 	
-	if(cmb_rutina == ""){
-		mensaje +="Seleccione una rutina.\n";
+	if(descripcion == ""){
+		mensaje ="Digite una descripcion.\n";
 	}
 	
-    if(cmb_area == ""){
-        mensaje +="Selecione un area.\n";
-	}
 	
 	if(mensaje == ""){
         //peticion ajax

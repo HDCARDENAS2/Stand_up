@@ -84,7 +84,7 @@ class GestionHorarioTareas {
 		//Inicio Conexion
 		if($bd->iniciar()){
 			//Sentecia
-			$bd->setSentencia('INSERT INTO rutinas_area (id_horarios,id_rutinas) VALUES(?,?);');
+			$bd->setSentencia('INSERT INTO horario_tarea (id_horarios,id_rutinas) VALUES(?,?);');
 			//Parametros
 			$bd->setParametro($cod_horario);
 			$bd->setParametro($cod_rutina);	
@@ -115,6 +115,7 @@ class GestionHorarioTareas {
 	 */
 	
 	function fn_update_horariotarea($codigo,$cod_horario,$cod_rutina,$cod_estado,$ajax = null,$bd = null){
+		
 	
 		$repuesta = false;
 	

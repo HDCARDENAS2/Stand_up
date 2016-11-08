@@ -14,11 +14,16 @@ require_once('/UI_Rutinas_area.php');
 	$obj_areas          = new GestionArea_Laboral();
 	$htmlrutinasarea	= "";
     /** Consulta objetos */
+
 	$rutinasareas      = $obj_cs_rutinasarea->fn_consulta_rutinasareas();
+
 	$rutinas           = $obj_rutinas->fn_consulta_rutinas();
+	
 	$areas             = $obj_areas->fn_consulta_areas_laboral();
 	/** Tablas */
+
 	$htmlrutinasarea   = $obj_ui_rutinasarea->DibujarTablaRutinasArea( $rutinasareas, 1, $obj_html, $areas, $rutinas, $gn_array_estados);
+
 	/** Plantilla principal */
 	$tpl_principal->assign( "htmlrutinasarea", $htmlrutinasarea );
 	$tpl_principal->assign( "menuhtml", $menuhtml);
