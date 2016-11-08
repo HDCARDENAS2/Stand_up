@@ -77,5 +77,47 @@ class GestionRutinas {
 	
 	}
 
+
+	/** @Autor	Alex alvarado
+	 *  @Mail	aalvarado@gmail.com
+	 *  @Date   05/11/2016
+	 *  @Name   fn_insertar_rutinas
+	 */
+	 
+	function fn_insertar_rutina($duracion,$url_imagen, $des_rutina, $id_clasificacion, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('INSERT INTO rutinas (des_rutina,id_clasificacion, url_imagen, duracion) VALUES(?,?,?,?);');
+			//Parametros
+			$bd->setParametro($des_rutina);
+			$bd->setParametro($id_clasificacion);
+			$bd->setParametro($url_imagen);	
+			$bd->setParametro($duracion);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_insertar_rutinas::fn_consulta_rutinas',$ajax);
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+
 }
 

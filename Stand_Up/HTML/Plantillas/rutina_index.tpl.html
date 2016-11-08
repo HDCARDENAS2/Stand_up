@@ -26,14 +26,17 @@
 			<h3 align="center" >Registro de rutinas</h3>
 		</div>	
 		
-		<form>
-			<input type="file" name="url_imagen" placeholder="Url de imagen">
-			<input type="text" name="duracion" placeholder="Duracion">
-			<select id="idclasificacion_rutina">
-				<option value="1"> Seleccione</option>
+		<form enctype="multipart/form-data" id="forma_rutinas">
+			<input type="file" name="url_file" id="url_file" >
+			<input type="text" name="duracion" id="duracion" placeholder="Duracion">
+			<input type="text" name="descripcion" id="descripcion" placeholder="Descripcion">
+			<input type="hidden" name="url_imagen" id="url_imagen" value="/url/imagen" >
+			<select id="idclasificacion_rutina" name="idclasificacion_rutina">
+				<option value=""> Seleccione</option>
+				<option value="1"> opcion 1</option>
 			</select>
 			<div align="center" style="padding-top: 10px">
-				<input  type="button" name="guardar" value="Guardar">
+				<input  type="button" name="guardar" value="Guardar" id="guardar_rutinas" onclick="fn_registrar_rutinas()">
 			</div>
 		</form>
 		
@@ -52,6 +55,7 @@
 		<script src="../../JS/skel.min.js"></script>
 		<script src="../../JS/util.js"></script>
 		<script src="../../JS/main.js"></script>
-
+		<script src="../../JS/rutinas.js"></script>
+		<script src="../../JS/GeneralAjax.js"></script>
 	</body>
 </html>
