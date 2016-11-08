@@ -38,10 +38,9 @@ class HTML_LIB{
 				}
 								
 				$selected = "";
-				
-				if( $select != null){
-					
-					if(trim($cod_select) == trim($select) ){
+
+				if((string)$select != null){
+					if(trim((string)$cod_select) == trim((string)$select) ){
 						$selected ="selected";
 					}
 				}

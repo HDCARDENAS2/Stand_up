@@ -11,10 +11,13 @@
 
 
 require_once('/smarty.php');
+require_once('../Modelo/GestionGeneral.php');
 //Menu general
 $tpl      = new SmartyExt();
 $menuhtml = $tpl->fetch('../../html/plantillas/menu.tpl.html');
 //Array de estado de la aplicacion
-$gn_array_estados = Array( Array( 'codigo' => 1 , 'valor' => 'Activo') , Array( 'codigo' => 0, 'valor' => 'Inactivo') );
+//$gn_array_estados = Array( Array( 'codigo' => 1 , 'valor' => 'Activo') , Array( 'codigo' => 0, 'valor' => 'Inactivo') );
+$obj_general = new GestionGeneral();
+$gn_array_estados = $obj_general->fn_consulta_paramtro_grupo('ESTADOS'); 
 
 ?>
