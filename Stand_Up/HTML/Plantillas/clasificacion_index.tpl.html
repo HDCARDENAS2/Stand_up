@@ -8,6 +8,7 @@
 	</head>
 	<body>
 		<!-- Header -->
+		<!-- Header -->
 		<header id="header">
 			<ul>
 		        <li><a href="index.php" >Stand Up</a></li>
@@ -25,14 +26,19 @@
 		<div style="padding-top: 50px;">
 			<h3 align="center">Registro de Clasificacion de Rutinas</h3>
 		</div>	
-		<form>
-			<input type="text" name="descripcion" placeholder="Descripcion">	
+		<form  id="forma_registro_clasificacion" name="forma_registro_clasificacion">
+		 	<input id="descripcion" name="descripcion" type="text" placeholder="Descripcion">	
 			<div align="center" style="padding-top: 10px">
-				<input  type="button" name="guardar" value="Guardar">
+				<input type="button" name="guardar" value="Registrar" onclick="fn_registrar_clasificacion()">
 			</div>
 		</form>
+		<form id="forma_tabla_clasificacion_rutina" name="forma_tabla_clasificacion_rutina">
+			   <input type="hidden" id="index_select_tabla" name="index_select_tabla" value="">
+			   <input type="hidden" id="id_tabla" name="id_tabla" value="">
+			   <!-- tabla -->
+			   {$htmlclasificacion}		
+			</form>
 		
-		{$htmlclasificacion}
 		
 		<!-- Footer -->
 		<footer id="footer">
@@ -47,6 +53,8 @@
 		<script src="../../JS/skel.min.js"></script>
 		<script src="../../JS/util.js"></script>
 		<script src="../../JS/main.js"></script>
+		<script src="../../JS/clasificacion.js"></script>
+		<script src="../../JS/GeneralAjax.js"></script>
 		
 	</body>
 </html>

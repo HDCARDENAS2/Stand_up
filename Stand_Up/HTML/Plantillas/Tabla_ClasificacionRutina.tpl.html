@@ -1,15 +1,28 @@
-<h3 align="center">Tareas</h3>
-<table id="tabla_clasificacion_{$id_tabla}">
+<h3 style="padding-top: 10px" align="center">Clasificacion Rutinas</h3>
+<table id="tabla_clasificacion_rutina{$id_tabla}" name="tabla_clasificacion_rutina{$id_tabla}">
 	<tr>
-		<th>ID</th>
-		<th>Descripcion</th>	
-		
+		<th width="20%">ID</th>
+		<th width="20%">Descripcion</th>
+		<th width="20%">Estado</th>
+		<th width="10%"></th>
 	</tr>
+	<tbody>
 	{foreach from=$clasificacion_rutina key=em item=clasificacion}
 	<tr>
-		<td>{$clasificacion.id_clasificacion}</td>
-		<td>{$clasificacion.descripcion}</td>
-		
+		<td>{$clasificacion.id_clasificacion}
+		<input type="hidden"  name="id_clasificacion{$id_tabla}[]" value="{$clasificacion.id_clasificacion}" />
+		</td>
+		<td>
+		<input type="text"  name="descripcion{$id_tabla}[]" value="{$clasificacion.descripcion}" />
+		</td>
+		<td>
+		<select name="cod_estado{$id_tabla}[]">{$obj_html->
+		DibujarCombo($lista_estados,$clasificacion.cod_estado,true)}</select>
+		</td>
+		<td>
+		<input type="button"  value="Guardar" onclick="fn_udapte_clasificacion(this.parentNode.parentNode.rowIndex,{$id_tabla});">
+		</td>
 	</tr>
 	{/foreach}
+	</tbody>
 </table>

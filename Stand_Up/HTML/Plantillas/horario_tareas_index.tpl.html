@@ -23,23 +23,27 @@
 		
 		<!-- body -->
 		<div style="padding-top: 50px;">
-			<h3 align="center" >Registro de Tareas</h3>
+			<h3 align="center" >Gestion de Horario Tareas</h3>
 		</div>	 
 		
-		<form>
-			<select id="id_horario">
-				<option value="1"> Seleccione</option>
-			</select>
-			<select id="id_rutina">
-				<option value="1"> Seleccione</option>
-			</select>	
-			<div align="center" style="padding-top: 10px">
-				<input  type="button" name="guardar" value="Guardar">
-			</div>
+		<form  id="forma_registro_horario_tarea" name="forma_registro_horario_tarea" >
 			
-		</form>
+            <label for="id_rutina" >Rutina</label>
+                <select id="id_rutina" name="id_rutina">{$obj_html->DibujarCombo($rutinas)}</select>
+            <label for="id_horario" >Horario</label>
+                <select id="id_horario" name="id_horario">{$obj_html->DibujarCombo($horarios)}</select>
+                
+			<div align="center" style="padding-top: 10px">
+		    	<input type="button" name="guardar" value="Registrar" onclick="fn_registrar_horario_tarea()">
+			</div>	
+			</form>
+			<form id="forma_tabla_horario_tarea" name="forma_tabla_horario_tarea">
+			   <input type="hidden" id="index_select_tabla" name="index_select_tabla" value="">
+			   <input type="hidden" id="id_tabla" name="id_tabla" value="">		
+		
 		
 		{$htmlHorarioTareas}
+		</form>
 			
 		<!-- Footer -->
 		<footer id="footer">
@@ -54,6 +58,8 @@
 		<script src="../../JS/skel.min.js"></script>
 		<script src="../../JS/util.js"></script>
 		<script src="../../JS/main.js"></script>
+		<script src="../../JS/horario_tarea.js"></script>
+			<script src="../../JS/GeneralAjax.js"></script>
 		
 	</body>
 </html>
