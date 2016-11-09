@@ -1,5 +1,5 @@
 <?php
-chdir("../Images");
+chdir("../Imagenes");
 $path = getcwd();
 $path_file = $path ."\\". basename($_FILES["url_file"]["name"]);
 

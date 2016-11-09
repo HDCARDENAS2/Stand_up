@@ -36,7 +36,7 @@ function fn_registrar_horarios(){
 		if(respuesta != null){
 			alert('El horario se inserto correctamente');
 			//submit forma
-			forma_registro_rutinas_area.submit();
+			forma_registro_horarios.submit();
 		}	
 	}else{
 		alert(mensaje);
