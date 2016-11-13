@@ -54,6 +54,7 @@ function fn_udapte_clasificacion(elemento,id){
 	
 	if(respuesta != null){
 		alert('La Clasificacion fue modificada correctamente');
+		location.reload();
 	}	
 
 
