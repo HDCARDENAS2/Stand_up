@@ -6,11 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../../CSS/main.css" />
 	</head>
-	<body>
-
-		<form  id="forma_login_usuario" name="forma_login_usuario" >
-			<div id="styleLogin">
-				<style>
+	
+		<style>
 					html, body {
 						height: 100%;
 					}
@@ -37,15 +34,20 @@
 						box-sizing: border-box;
 					}
 				</style>
-				
+	
+	
+	<body>
+
+		<form  id="forma_login_usuario" name="forma_login_usuario" >
+			<div id="styleLogin">
 				<div id="LoginContenedor-1">
 					<div id="LoginContenedor-2">
 						<table id="tabla_login" align="center" width="100%">
 							<tr><td><label><b>Username</b></label></td></tr>
-							<tr><td><input type="text" placeholder="Ingrese un nombre de usuario" name="user_name" id="user_name" required></td></tr>
+							<tr><td><input type="text"  name="user_name" id="user_name" required></td></tr>
 							<tr><td><label><b>Password</b></label></td></tr>
-							<tr><td><input type="password" placeholder="Ingrese una contraseña" name="user_pass" id="user_pass" required></td></tr>
-							<tr><td><button value="Login" onclick="fn_validar_login()" >Login</button></td></tr>
+							<tr><td><input type="password"  name="user_pass" id="user_pass" required></td></tr>
+							<tr><td><input type="button" value="Login" onclick="fn_validar_login()" ></td></tr>
 						</table>
 					</div>
 				</div>
