@@ -26,7 +26,14 @@ class GestionHorarios {
 		//Inicio Conexion
 		if($bd->iniciar()){
 		   //Sentecia
-		   $bd->setSentencia('select * from horarios where cod_estado = 1' );
+		   $bd->setSentencia("SELECT id_horarios, 
+		   						CONCAT(lv_dia_inicio.descripcion,'-',lv_dia_fin.descripcion,' ',hora_ejecucion) AS  label_horario,
+		   						dia_inicio, dia_fin
+		   						FROM horarios 
+		   						INNER JOIN lista_valores AS lv_dia_inicio ON lv_dia_inicio.valor = horarios.dia_inicio AND lv_dia_inicio.agrupacion = 'DIAS_SEMANA'
+		   						INNER JOIN lista_valores AS lv_dia_fin ON lv_dia_fin.valor = horarios.dia_fin AND lv_dia_fin.agrupacion = 'DIAS_SEMANA'
+		   						WHERE cod_estado = 1
+		   						");
 		   //Se ejecuta la sentencia
 		   if($bd->Ejecutar()){
 		     	$array = $bd->getResutados();
@@ -188,7 +195,8 @@ class GestionHorarios {
 		}
 		//Errores
 		if($bd->Errores()){
-			$bd->printErrores('fn_update_horariosBD::fn_consulta_horarios',$ajax);
+			//$bd->printErrores('fn_delete_horariosBD::fn_consulta_horarios',$ajax);
+			
 		}
 		//Cierre de conexion
 		$bd->Cerrar();
@@ -197,9 +205,48 @@ class GestionHorarios {
 	
 	}
 
-	function diasSemana(){
-		$dias = ["lunes", "martes", "miercoles", "jueves","viernes", "sabado", "domingo"];
-		return $dias;
+
+	/**
+	 * @autor	Cesar Rodriguez
+	 * @mail	crodriguez@gmail.com
+	 * @date	12/11/2016
+	 * @desc	Esta funcion consulta los horarios de la hora programada
+	 */
+	function fn_consulta_horario_por_hora( $hora, $dia, $bd = null ){
+	
+		$array = null;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+		    //Sentecia
+			$bd->setSentencia("SELECT trabajadores.correo, horarios.id_horarios 
+								FROM horarios 
+								INNER JOIN horario_tarea ON horario_tarea.id_horarios = horarios.id_horarios 
+								INNER JOIN rutinas ON rutinas.id_rutinas = horario_tarea.id_rutinas 
+								INNER JOIN rutinas_area ON rutinas_area.id_rutinas = rutinas.id_rutinas 
+								INNER JOIN area_laboral ON area_laboral.id_area_laboral = rutinas_area.id_area_laboral 
+								INNER JOIN trabajadores ON trabajadores.id_area_laboral = area_laboral.id_area_laboral 
+								WHERE hora_ejecucion =? AND ? BETWEEN dia_inicio and dia_fin");
+			//Parametros
+			$bd->setParametro($hora);
+			$bd->setParametro($dia);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$array = $bd->getResutados();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('GestionHorarios::fn_consulta_horarios');
+		}
+	    //Cierre de conexion
+		$bd->Cerrar();
+	
+		return $array;
+	
 	}
 }
 ?>
