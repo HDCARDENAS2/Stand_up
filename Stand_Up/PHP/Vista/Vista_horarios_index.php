@@ -23,6 +23,7 @@ require_once('/UI_Horarios.php');
 	$tpl_principal->assign( "htmlHorarios", $htmlHorarios );
 	$tpl_principal->assign("obj_html",$obj_html);
 	$tpl_principal->assign("dias_semana",$dias_semana);
+	$tpl_principal->assign( "menuhtml", $menuhtml);
 	$tpl_principal->display('../../html/plantillas/horarios_index.tpl.html');
 	
 ?>

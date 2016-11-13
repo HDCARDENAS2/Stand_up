@@ -20,6 +20,7 @@ require_once('/UI_Clasificacion_Rutina.php');
 	
 	/** Plantilla principal */
 	$tpl_principal->assign( "htmlclasificacion", $htmlclasificacion );
+	$tpl_principal->assign( "menuhtml", $menuhtml);
 	$tpl_principal->display('../../html/plantillas/clasificacion_index.tpl.html');
 	$tpl_principal->assign( "obj_html", $obj_html);
 

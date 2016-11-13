@@ -9,7 +9,7 @@
 	</tr>
 	<tbody>
 	{foreach from=$clasificacion_rutina key=em item=clasificacion}
-	<tr>
+	<tr id="row_{$clasificacion.id_clasificacion}">
 		<td>{$clasificacion.id_clasificacion}
 		<input type="hidden"  name="id_clasificacion{$id_tabla}[]" value="{$clasificacion.id_clasificacion}" />
 		</td>
@@ -23,9 +23,9 @@
 		<td>
 		<input type="button"  value="Guardar" onclick="fn_udapte_clasificacion(this.parentNode.parentNode.rowIndex,{$id_tabla});">
 		</td>
-		<!--<td>
-		<input type="button"  value="Eliminar" class="delete" onclick="fn_delete_clasificacion(this.parentNode.parentNode.rowIndex,{$id_tabla});">
-		</td>-->
+		<td>
+		<input type="button"  value="Eliminar" class="delete" onclick="fn_delete_clasificacion(this.parentNode.parentNode.rowIndex,{$id_tabla},{$clasificacion.id_clasificacion});">
+		</td>
 	</tr>
 	{/foreach}
 	</tbody>

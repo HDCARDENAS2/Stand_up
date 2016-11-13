@@ -6,41 +6,69 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../../CSS/main.css" />
 	</head>
+	
+		<style>
+					html, body {
+						height: 100%;
+					}
+					.LoginContenedor-1 {
+						height: 100%;
+						width: 100%;
+						display: table;
+					}
+					.LoginContenedor-1 {
+						vertical-align: middle;
+						display: table-cell;
+						height: 100%;
+					}
+					.tabla_login {
+						margin: 0 auto;
+					}
+					/* Full-width inputs */
+					input[type=text], input[type=password] {
+						width: 100%;
+						padding: 12px 20px;
+						margin: 8px 0;
+						display: inline-block;
+						border: 1px solid #ccc;
+						box-sizing: border-box;
+					}
+				</style>
+	
+	
 	<body>
-		<!-- Header -->
-		<header id="header">
-			<ul>
-		        <li><a href="index.php" >Stand Up</a></li>
-				<li><a href="Vista_horarios_index.php"> Horarios</a></li>
-				<li><a href="Vista_horario_tareas_index.php"> Tareas</a></li>
-				<li><a href="Vista_trabajadores_index.php"> Trabajadores</a></li>
-				<li><a href="Vista_rutinas_index.php"> Rutina</a></li>
-				<li><a href="Vista_clasificacion_index.php"> Clasificacion</a></li>
-				<li><a href="Vista_area_laboral_index.php"> Areas Laborales</a></li>
-			</ul>
-		</header>
 
-		<!-- Banner -->
-		<section id="banner">
-			<div >
-				<h1><a>Stand Up Software para Pausas Activas</a></h1>
+		<form  id="forma_login_usuario" name="forma_login_usuario" >
+			<div id="styleLogin">
+				<div id="LoginContenedor-1">
+					<div id="LoginContenedor-2">
+						<table id="tabla_login" align="center" width="100%">
+							<tr><td><label><b>Username</b></label></td></tr>
+							<tr><td><input type="text"  name="user_name" id="user_name" required></td></tr>
+							<tr><td><label><b>Password</b></label></td></tr>
+							<tr><td><input type="password"  name="user_pass" id="user_pass" required></td></tr>
+							<tr><td><input type="button" value="Login" onclick="fn_validar_login()" ></td></tr>
+						</table>
+					</div>
+				</div>
 			</div>
-		</section>
-		<!-- body -->
-								
-		<!-- Footer -->
-		<footer id="footer">
-			<div class="copyright">
-				&copy; <a>Stand Up 2016</a>
-			</div>
-		</footer>
+		</form>
+	<!-- body -->
+							
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="copyright">
+			&copy; <a>Stand Up 2016</a>
+		</div>
+	</footer>
 
-		<!-- Scripts -->
-		<script src="../../JS/jquery.min.js"></script>
-		<script src="../../JS/jquery.scrolly.min.js"></script>
-		<script src="../../JS/skel.min.js"></script>
-		<script src="../../JS/util.js"></script>
-		<script src="../../JS/main.js"></script>
-
+	<!-- Scripts -->
+	<script src="../../JS/jquery.min.js"></script>
+	<script src="../../JS/jquery.scrolly.min.js"></script>
+	<script src="../../JS/skel.min.js"></script>
+	<script src="../../JS/util.js"></script>
+	<script src="../../JS/main.js"></script>
+	<script src="../../JS/js_login.js"></script>
+    <script src="../../JS/GeneralAjax.js"></script>
 	</body>
 </html>

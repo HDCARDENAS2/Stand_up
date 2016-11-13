@@ -65,7 +65,7 @@ function fn_udapte_horario_tarea(elemento,id){
 
 }
 
-function fn_delete_horario_tarea(elemento,id){
+function fn_delete_horario_tarea(elemento,id, id_row){
 
 	elemento--;
 	$("#index_select_tabla").val(elemento);
@@ -77,6 +77,7 @@ function fn_delete_horario_tarea(elemento,id){
 	
 	if(respuesta != null){
 		alert('El horario tarea fue eliminado correctamente');
+		$("#row_"+id_row).remove();
 	}		
 
 }
