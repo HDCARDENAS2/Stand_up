@@ -60,7 +60,7 @@ function fn_udapte_clasificacion(elemento,id){
 
 }
 
-function fn_delete_clasificacion(elemento,id){
+function fn_delete_clasificacion(elemento,id,id_row){
 	
 	elemento--;
 	$("#index_select_tabla").val(elemento);
@@ -71,10 +71,7 @@ function fn_delete_clasificacion(elemento,id){
 	
 	if(respuesta != null){
 		alert('La clasificacion fue eliminada correctamente');
-		//$("#row_"+id_row).remove();
-		//forma_registro_clasificacion.submit();
-			 //$("#index_select_tabla").remove(elemento);
-			 location.reload();
+					 $("#row_"+id_row).remove();
 	}	
 
 }

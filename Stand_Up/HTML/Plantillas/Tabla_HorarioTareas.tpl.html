@@ -10,7 +10,7 @@
 	</tr>
 	<tbody>
 	{foreach from=$lista_horario_tarea key=em item=$horariotarea}
-	<tr>
+	<tr id="row_{$horariotarea.id_horario_tarea}">
 		<td>{$horariotarea.id_horario_tarea}
 		<input type="hidden"  name="id_horario_tarea{$id_tabla}[]" value="{$horariotarea.id_horario_tarea}" />
 		</td>
@@ -30,7 +30,7 @@
 		 <input type="button"  value="Guardar" onclick="fn_udapte_horario_tarea(this.parentNode.parentNode.rowIndex,{$id_tabla});">
 		</td>
 		<td>
-		<input type="button"  value="Eliminar" class="delete" onclick="fn_delete_horario_tarea(this.parentNode.parentNode.rowIndex,{$id_tabla});">
+		<input type="button"  value="Eliminar" class="delete" onclick="fn_delete_horario_tarea(this.parentNode.parentNode.rowIndex,{$id_tabla}, {$horariotarea.id_horario_tarea});">
 		</td>
 	</tr>
 	{/foreach}
