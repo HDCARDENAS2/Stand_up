@@ -2,6 +2,7 @@
 
 require_once('../Config/CoreAjax.php');
 require_once('../Modelo/GestionHorarioTarea.php');
+
 session_start();
 //Se crea el objetos
 $ajax                  = new CoreAjax();

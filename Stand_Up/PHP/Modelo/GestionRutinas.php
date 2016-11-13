@@ -119,5 +119,41 @@ class GestionRutinas {
 	
 	}
 
+	 function fn_consulta_rutinaByClasificacion( $codigo, $bd = null ){
+	
+		$array = null;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		
+		//Inicio Conexion
+		if($bd->iniciar()){
+		    //Sentecia
+			$bd->setSentencia('select * from rutinas where id_clasificacion=?');
+			//Parametros
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$array = $bd->getResutados();
+			}
+		}
+		//Errores 
+		if($bd->Errores()){
+			$bd->printErrores('GestionRutinas::fn_consulta_rutina');
+		}
+	    //Cierre de conexion
+		$bd->Cerrar();
+	
+		return $array;
+	
+	}
+
+
+
+
+
+
+
 }
 

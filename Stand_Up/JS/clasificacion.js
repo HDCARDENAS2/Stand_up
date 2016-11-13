@@ -70,6 +70,10 @@ function fn_delete_clasificacion(elemento,id){
 	
 	if(respuesta != null){
 		alert('La clasificacion fue eliminada correctamente');
+		//$("#row_"+id_row).remove();
+		//forma_registro_clasificacion.submit();
+			 //$("#index_select_tabla").remove(elemento);
+			 location.reload();
 	}	
 
 }

@@ -1,7 +1,5 @@
 <?php
 
-require_once('../Config/header.php');
-
 class UI_vista_usuarioFinal {
 	
 	/**
