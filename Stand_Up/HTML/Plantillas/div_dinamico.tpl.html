@@ -1,10 +1,9 @@
-<h3 align="center">Rutinas</h3>
-	
+<h3 align="center" >Bienvenido a la Pausa Activa</h3>
 	<input type="hidden" value = "{$maximoElementos}" name = "maximoElementos">
 	<input type="hidden" value = "-1" name = "posicionTemporal" >
     <input type="hidden" value = "" name = "temp_tiempo" >
 
-	<div id="slider">
+	<div id="slider" class="slider" >
 	{foreach from=$vistas key=em item=vista}
 		<div><img src="../../Imagenes/{$vista.url_imagen}" alt="">
 		<input type="hidden" value = "{$vista.duracion}" name = "hiden_duracion[]">

@@ -1,8 +1,43 @@
+/*Titulo*/
+h3{
+	margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+
+	}
+
+h3{
+	font-weight: 700;
+		line-height: 1.25;
+		margin: 0 0 1em 0;
+	}
+
+	h3 {
+		font-size: 1.35em;
+	}
+
+	h3{font-weight: 700;
+		line-height: 1.25;
+		margin: 0 0 1em 0;}
+
+
+/*Fondo*/
+
+
+body {
+		padding-top: 4.125em;
+	}
+
+
+/*Slider de imagenes*/
 #slider { 
 position: relative;
 overflow: hidden;
 width: 500px; 
-height: 300px; 
+height: 500px; 
 border:10px solid #333;
 border-radius: 40px;
 margin: 0 auto;
@@ -15,24 +50,44 @@ top:0;
 left:0;
 }
 #slider img {
-width:100%;
-min-height:300px;
+max-width:500%;
+min-height:500px;
+width: 500px; 
+height: 500px; 
 margin:0;
 padding:0; 
 border:0;
 }
-#slider p {
-position: absolute;
-bottom: 30px;
-left: 0;
-display: block;
-width: 400px;
-height: 24px;
-margin:0;
-padding: 5px 0;
-color: #eee;
-background: #990000;
-font-size: 22px;
-line-height:22px;
-text-align:center;
-}
+
+/*Floter*/
+#footer .copyright {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 0.9em;
+			margin: 0 0 2em 0;
+			padding: 0;
+		}
+
+
+	#footer {
+		padding: 4em 0 2em 0;
+		background: #1c1c1c;
+		text-align: center;
+	}
+
+		#footer a {
+			color: rgba(255, 255, 255, 0.75);
+		}
+
+			#footer a:hover {
+				color: #fff;
+			}
+
+		h3
+
+		@media screen and (max-width: 736px) {
+
+			#footer {
+				padding: 3em 0 1em 0;
+			}
+
+		}

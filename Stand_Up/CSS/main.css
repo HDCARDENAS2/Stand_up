@@ -4538,12 +4538,7 @@
 				color: #fff;
 			}
 
-		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 0.9em;
-			margin: 0 0 2em 0;
-			padding: 0;
-		}
+		h3
 
 		@media screen and (max-width: 736px) {
 
