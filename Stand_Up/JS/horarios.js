@@ -78,7 +78,7 @@ function fn_update_horarios(elemento,id){
  * @access public
  */
 
-function fn_delete_horario(elemento,id){
+function fn_delete_horario(elemento,id, id_row){
 	
 	elemento--;
 	$("#index_select_tabla").val(elemento);
@@ -89,6 +89,7 @@ function fn_delete_horario(elemento,id){
 			             '../Control/Del_horarios.php');
 	
 	if(respuesta != null){
+		$("#row_"+id_row).remove();
 		alert('el horario fue eliminado correctamente');
 	}	
 

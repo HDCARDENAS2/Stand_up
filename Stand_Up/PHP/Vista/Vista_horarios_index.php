@@ -7,13 +7,14 @@ require_once('/UI_Horarios.php');
 	/** Declaracion de variables */
     $tpl_principal     = new SmartyExt();
 	$obj_cs_horarios    = new GestionHorarios();
+	$obj_cs_general   = new GestionGeneral();
 	$obj_ui_horarios    = new UI_Horarios();
 	$obj_html           = new HTML_LIB();
 	$htmlHorarios  = "";
 	
     /** Consulta objetos */
 	$horarios     = $obj_cs_horarios->fn_consulta_horarios();
-	$dias_semana     = $obj_cs_horarios->diasSemana();
+	$dias_semana     = $obj_cs_general->fn_consulta_paramtro_grupo('DIAS_SEMANA');
 	
 	/** Tablas */
 	$htmlHorarios = $obj_ui_horarios->DibujarTablaHorarios( $horarios, 1 , $dias_semana, $obj_html);
