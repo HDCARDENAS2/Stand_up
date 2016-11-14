@@ -54,7 +54,7 @@ function enviarCorreo($trabajadores){
 	}
 	$mail->AddAddress(EMAIL);
 	//$id = 1;
-	$mail->Subject    = "Hacer las pausas perrros"; 
+	$mail->Subject    = "Hacer las pausas activas"; 
 
 	$mensaje = file_get_contents('../../HTML/Plantillas/template_envio_correo.php');
 	$mensaje = str_replace('[mensaje]', "Es importante hacer las pausas activas", $mensaje);

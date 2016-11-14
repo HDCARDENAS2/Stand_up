@@ -1,5 +1,5 @@
 <?php
-require_once('../Config/smarty.php');
+require_once('../Config/Smarty.php');
 require_once('../Modelo/GestionVistaIndex.php');
 require_once('../Config/HTML_LIB.php');
 require_once('UI_vista_usuarioFinal.php');
