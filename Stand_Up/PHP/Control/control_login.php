@@ -19,11 +19,14 @@ require_once('../Modelo/GestionGeneral.php');
 	/** Consultamos el usuario registrado en la base de datos y 
 	 * comparamos para validar que sea el */
 	if( $usuario = $obj_usuario->fn_consulta_usuario( $agrupacion ) ){
-		if ( $login_user = $usuario[0] && $login_pass = $usuario[1] ) {
+		
+		if ( $login_user == $usuario[0]['valor'] && $login_pass == $usuario[1]['valor'] ) {
 			$_SESSION['usuario_valido'] = 1;
 			$ajax->setDato('resultado', 1);
+			
 		} else {
 			$ajax->setError("Usuario o contraseña inválido. Verifique nuevamente.");
+			$ajax->setDato('resultado', 0);
 		}
 	}
 	/** Retorno objeto ajax */

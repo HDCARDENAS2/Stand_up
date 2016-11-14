@@ -26,7 +26,7 @@ function fn_validar_login(){
 				             '../Control/control_login.php');
 		if(respuesta != null){
 			if(respuesta.resultado == 1 ){
-				
+				document.location.href='../Vista/Vista_horario_tareas_index.php';
 			}
 		}	
 	
