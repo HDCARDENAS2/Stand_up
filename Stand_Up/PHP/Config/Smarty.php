@@ -9,17 +9,17 @@
  * Clase de plantillas
  */
 
-require_once('/../libs/smarty/libs/Smarty.class.php');
+require_once('../libs/smarty/libs/Smarty.class.php');
 
 class SmartyExt extends Smarty {
 	
 	public function __construct()
 	{
 		parent::__construct();
-		$this->setTemplateDir('/../HTML/Plantillas');
-		$this->setCompileDir('/../HTML/Plantillas_c');
-		$this->setConfigDir('/../HTML/config');
-		$this->setCacheDir('/../HTML/cache');		
+		$this->setTemplateDir('../HTML/Plantillas');
+		$this->setCompileDir('../HTML/Plantillas_c');
+		$this->setConfigDir('../HTML/config');
+		$this->setCacheDir('../HTML/cache');		
 	}
 }
 

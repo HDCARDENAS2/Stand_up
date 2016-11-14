@@ -17,7 +17,7 @@ class UI_HorarioTareas {
 		$tpl_horario_tarea->assign( "lista_horarios", $lista_horarios );
 		$tpl_horario_tarea->assign( "lista_rutinas", $lista_rutinas );
 		$tpl_horario_tarea->assign( "lista_estados", $lista_estados );
-		return $tpl_horario_tarea->fetch('../../html/plantillas/Tabla_HorarioTareas.tpl.html');
+		return $tpl_horario_tarea->fetch('../../HTML/Plantillas/Tabla_HorarioTareas.tpl.html');
 	}
 	
 }

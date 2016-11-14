@@ -11,7 +11,7 @@ class UI_vista_usuarioFinal {
 		$tpl_vistaUsuarioFinal->assign( "vistas", $array );
 		$tpl_vistaUsuarioFinal->assign ("maximoElementos",count($array));
 
-		return $tpl_vistaUsuarioFinal->fetch('../../html/plantillas/div_dinamico.tpl.html');
+		return $tpl_vistaUsuarioFinal->fetch('../../HTML/Plantillas/div_dinamico.tpl.html');
 	}
 }
 

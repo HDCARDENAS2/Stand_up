@@ -16,7 +16,7 @@ class UI_Clasificacion_Rutina {
 		$tpl_clasificacion->assign( "obj_html", $obj_html );
 		//no se si va la descipcion ahi no creo
 		$tpl_clasificacion->assign( "lista_estados", $lista_estados );
-		return $tpl_clasificacion->fetch('../../html/plantillas/Tabla_ClasificacionRutina.tpl.html');
+		return $tpl_clasificacion->fetch('../../HTML/Plantillas/Tabla_ClasificacionRutina.tpl.html');
 	}
 }
 

@@ -3,7 +3,7 @@ require_once('../Config/header.php');
 require_once('../Config/HTML_LIB.php');
 require_once('../Modelo/GestionTrabajadores.php');
 require_once('../Modelo/GestionArea_Laboral.php');
-require_once('/UI_Trabajadores.php');
+require_once('UI_Trabajadores.php');
 	
 	/** Declaracion de variables */
 	$tpl_principal		= new SmartyExt();
@@ -25,6 +25,6 @@ require_once('/UI_Trabajadores.php');
 	$tpl_principal->assign( "menuhtml", $menuhtml);
 	$tpl_principal->assign( "obj_html", $obj_html);
 	$tpl_principal->assign( "area_laboral", $area_laboral);
-	$tpl_principal->display('../../html/plantillas/trabajadores_index.tpl.html');
+	$tpl_principal->display('../../HTML/Plantillas/trabajadores_index.tpl.html');
 
 ?>

@@ -16,7 +16,7 @@ class UI_Trabajadores {
 		$tpl_trabajador->assign( "obj_html", $obj_html );
 		$tpl_trabajador->assign( "lista_areas", $lista_areas );
 		$tpl_trabajador->assign( "lista_estados", $lista_estados );
-		return $tpl_trabajador->fetch('../../html/plantillas/Tabla_Trabajadores.tpl.html');
+		return $tpl_trabajador->fetch('../../HTML/Plantillas/Tabla_Trabajadores.tpl.html');
 	}
 }
 

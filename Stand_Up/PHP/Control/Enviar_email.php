@@ -11,18 +11,18 @@ $o_gestion_horario = new GestionHorarios();
 date_default_timezone_set('America/Bogota');
 
 $hora = date('H:i');
-$hora = "18:20";
+
 $dia = date('N');
-$dia = 4;
+
 $trabajadores = $o_gestion_horario->fn_consulta_horario_por_hora($hora, $dia);
 
 print "Hora: ".$hora;
 print "<br>dia: ".$dia."<br>";
-//print_r($trabajadores);
 
+if(count($trabajadores) > 0){
 
-//print_r(URL);
-enviarCorreo($trabajadores);
+	enviarCorreo($trabajadores);
+}
 
 
 
@@ -45,6 +45,7 @@ function enviarCorreo($trabajadores){
 	 
 
 
+	
 	foreach ($trabajadores as $key => $value) {
 		# code...
 		$mail->AddAddress($value['correo']);

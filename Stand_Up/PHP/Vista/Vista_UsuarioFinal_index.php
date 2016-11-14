@@ -2,7 +2,7 @@
 require_once('../Config/smarty.php');
 require_once('../Modelo/GestionVistaIndex.php');
 require_once('../Config/HTML_LIB.php');
-require_once('/UI_vista_usuarioFinal.php');
+require_once('UI_vista_usuarioFinal.php');
 	/** Declaracion de variables */
     $tpl_principal     = new SmartyExt();
 	$obj_cs_vistafinal    = new GestionVistaIndex();
@@ -23,7 +23,7 @@ require_once('/UI_vista_usuarioFinal.php');
 	/** Plantilla principal */
 	$tpl_principal->assign( "htmlvista", $htmlvista );
 	$tpl_principal->assign( "obj_html",$obj_html);
-	$tpl_principal->display('../../html/plantillas/vista_usuarioFinal.tpl.html');	
+	$tpl_principal->display('../../HTML/Plantillas/vista_usuarioFinal.tpl.html');	
 }else{
 
 	echo "El Link es Inconrrecto";

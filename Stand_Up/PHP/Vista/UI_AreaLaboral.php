@@ -15,7 +15,7 @@ class UI_AreaLaboral {
 		$tpl_area_laboral->assign( "id_tabla", $id );
 		$tpl_area_laboral->assign( "obj_html", $obj_html );
 		$tpl_area_laboral->assign( "lista_estados", $lista_estados );
-		return $tpl_area_laboral->fetch('../../html/plantillas/Tabla_AreaLaboral.tpl.html');
+		return $tpl_area_laboral->fetch('../../HTML/Plantillas/Tabla_AreaLaboral.tpl.html');
 	}
 }
 

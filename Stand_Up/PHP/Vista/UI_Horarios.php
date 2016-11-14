@@ -15,7 +15,7 @@ class UI_Horarios {
 		$tpl_horarios->assign( "id_tabla", $id );
 		$tpl_horarios->assign( "obj_html", $obj_html );
 		$tpl_horarios->assign( "dias_semana", $dias_semana );
-		return $tpl_horarios->fetch('../../html/plantillas/Tabla_Horarios.tpl.html');
+		return $tpl_horarios->fetch('../../HTML/Plantillas/Tabla_Horarios.tpl.html');
 	}
 }
 

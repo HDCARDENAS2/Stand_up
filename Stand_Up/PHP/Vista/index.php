@@ -8,6 +8,6 @@ $tpl_principal	= new SmartyExt();
 
 $_SESSION["usuario_valido"] = "0";
 
-$tpl_principal->display('../../html/plantillas/index.tpl.html');
+$tpl_principal->display('../../HTML/Plantillas/index.tpl.html');
 
 ?>

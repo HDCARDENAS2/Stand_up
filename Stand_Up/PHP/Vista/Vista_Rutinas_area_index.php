@@ -4,7 +4,7 @@ require_once('../Config/HTML_LIB.php');
 require_once('../Modelo/GestionRutinasArea.php');
 require_once('../Modelo/GestionRutinas.php');
 require_once('../Modelo/GestionArea_Laboral.php');
-require_once('/UI_Rutinas_area.php');
+require_once('UI_Rutinas_area.php');
 
 	$tpl_principal		= new SmartyExt();
 	$obj_cs_rutinasarea	= new GestionRutinasArea();
@@ -30,6 +30,6 @@ require_once('/UI_Rutinas_area.php');
 	$tpl_principal->assign( "obj_html", $obj_html);
 	$tpl_principal->assign( "rutinas", $rutinas);
 	$tpl_principal->assign( "areas", $areas);
-	$tpl_principal->display('../../html/plantillas/rutinas_area.tpl.html');
+	$tpl_principal->display('../../HTML/Plantillas/rutinas_area.tpl.html');
 
 ?>

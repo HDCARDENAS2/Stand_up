@@ -13,7 +13,7 @@ class UI_Rutinas {
 		$tpl_trabajador = new SmartyExt();
 		$tpl_trabajador->assign( "rutinas", $array );
 		$tpl_trabajador->assign( "id_tabla", $id );
-		return $tpl_trabajador->fetch('../../html/plantillas/Tabla_Rutinas.tpl.html');
+		return $tpl_trabajador->fetch('../../HTML/Plantillas/Tabla_Rutinas.tpl.html');
 	}
 }
 

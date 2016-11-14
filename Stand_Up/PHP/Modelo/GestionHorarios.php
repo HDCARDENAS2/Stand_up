@@ -1,6 +1,6 @@
 <?php
 
-require_once('/../Config/ConexionBD.php');
+require_once('../Config/ConexionBD.php');
 
 /**
  * @autor	Cesar Rodriguez
@@ -28,7 +28,8 @@ class GestionHorarios {
 		   //Sentecia
 		   $bd->setSentencia("SELECT id_horarios, 
 		   						CONCAT(lv_dia_inicio.descripcion,'-',lv_dia_fin.descripcion,' ',hora_ejecucion) AS  label_horario,
-		   						dia_inicio, dia_fin
+		   						dia_inicio, dia_fin,
+		   						hora_ejecucion
 		   						FROM horarios 
 		   						INNER JOIN lista_valores AS lv_dia_inicio ON lv_dia_inicio.valor = horarios.dia_inicio AND lv_dia_inicio.agrupacion = 'DIAS_SEMANA'
 		   						INNER JOIN lista_valores AS lv_dia_fin ON lv_dia_fin.valor = horarios.dia_fin AND lv_dia_fin.agrupacion = 'DIAS_SEMANA'

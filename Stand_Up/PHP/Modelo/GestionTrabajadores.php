@@ -1,6 +1,6 @@
 <?php
 
-require_once('/../Config/ConexionBD.php');
+require_once('../Config/ConexionBD.php');
 
 class GestionTrabajadores {
 

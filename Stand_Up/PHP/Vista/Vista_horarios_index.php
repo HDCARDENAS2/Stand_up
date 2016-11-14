@@ -2,7 +2,7 @@
 require_once('../Config/header.php');
 require_once('../Config/HTML_LIB.php');
 require_once('../Modelo/GestionHorarios.php');
-require_once('/UI_Horarios.php');
+require_once('UI_Horarios.php');
 	
 	/** Declaracion de variables */
     $tpl_principal     = new SmartyExt();
@@ -24,6 +24,6 @@ require_once('/UI_Horarios.php');
 	$tpl_principal->assign("obj_html",$obj_html);
 	$tpl_principal->assign("dias_semana",$dias_semana);
 	$tpl_principal->assign( "menuhtml", $menuhtml);
-	$tpl_principal->display('../../html/plantillas/horarios_index.tpl.html');
+	$tpl_principal->display('../../HTML/Plantillas/horarios_index.tpl.html');
 	
 ?>

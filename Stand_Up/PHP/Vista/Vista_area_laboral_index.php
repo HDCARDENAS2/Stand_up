@@ -2,7 +2,7 @@
 require_once('../Config/header.php');
 require_once('../Config/HTML_LIB.php');
 require_once('../Modelo/GestionArea_Laboral.php');
-require_once('/UI_AreaLaboral.php');
+require_once('UI_AreaLaboral.php');
 	
 	/** Declaracion de variables */
 	$tpl_principal		= new SmartyExt();
@@ -21,6 +21,6 @@ require_once('/UI_AreaLaboral.php');
 	$tpl_principal->assign( "htmlAreaLaboral", $htmlAreaLaboral );
 	$tpl_principal->assign( "menuhtml", $menuhtml);
 	$tpl_principal->assign( "obj_html", $obj_html);
-	$tpl_principal->display('../../html/plantillas/area_laboral_index.tpl.html');
+	$tpl_principal->display('../../HTML/Plantillas/area_laboral_index.tpl.html');
 
 ?>

@@ -16,7 +16,7 @@ class UI_Rutinas_area {
 		$tpl_rutina_area->assign( "lista_areas", $lista_areas );
 		$tpl_rutina_area->assign( "lista_rutinas", $lista_rutinas );
 		$tpl_rutina_area->assign( "lista_estados", $lista_estados );
-		return $tpl_rutina_area->fetch('../../html/plantillas/Tabla_Rutinas_area.tpl.html');
+		return $tpl_rutina_area->fetch('../../HTML/Plantillas/Tabla_Rutinas_area.tpl.html');
 	}
 }
 
