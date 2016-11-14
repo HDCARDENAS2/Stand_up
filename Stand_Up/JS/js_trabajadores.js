@@ -61,6 +61,27 @@ function fn_update_trabajador( elemento, id ){
 	
 	if(respuesta != null){
 		alert('El registro se modifico correctamente');
-	}	
+	}
 
+}
+
+/**
+ * @author	Raphael Lara
+ * @email	lara_d_kli@hotmail.com
+ * @date	13/11/2016
+ */
+function fn_delete_trabajador( elemento, id, id_row ){
+	
+	elemento--;
+	$("#index_select_tabla").val(elemento);
+	$("#id_tabla").val(id);
+	
+	/** Peticion ajax */
+	var respuesta = Ajax('forma_tabla_trabajadores',
+						 '../Control/control_delTrabajador.php');
+	
+	if(respuesta != null){
+		alert('El trabajador fue eliminado correctamente');
+		$("#row_"+id_row).remove();
+	}	
 }

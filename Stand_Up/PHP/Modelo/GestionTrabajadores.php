@@ -136,6 +136,74 @@ class GestionTrabajadores {
 		
 		return $repuesta;
 	}
+	
+	/** @autor	Raphael Lara
+	 *  @mail	lara_d_kli@hotmail.com
+	 *  @date   05/11/2016
+	 */
+	function fn_delete_trabajadores($cod_trabajador, $ajax = null, $bd = null ){
+		
+		$repuesta = false;
+		
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		
+		if($bd->iniciar()){
+			/** Sentecia */
+			$bd->setSentencia('DELETE FROM trabajadores WHERE id_trabajadores=?;;');
+			/** Parametros */
+			$bd->setParametro($cod_trabajador);
+			/** Ejecutamos */
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		/** Errores */
+		if($bd->Errores()){
+			$bd->printErrores('GestionTrabajadores::fn_delete_trabajadores', $ajax);
+		}
+		/** Cierre de la conexion */ 
+		$bd->Cerrar();
+	
+		return $repuesta;
+	}
+	
+	/** @autor	Raphael Lara
+	 *  @mail	lara_d_kli@hotmail.com
+	 *  @date   05/11/2016
+	 */
+	function fn_consulta_trabajadorByArea( $cod_area_laboral, $ajax = null, $bd = null ){
+		
+		$array = null;
+		
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		
+		if($bd->iniciar()){
+			/** Sentecia */
+			$bd->setSentencia('SELECT * FROM trabajadores WHERE id_area_laboral=?;');
+			/** Parametros */
+			$bd->setParametro($cod_area_laboral);
+			/** Ejecutamos */
+			if($bd->Ejecutar()){
+				$array = $bd->getResutados();
+			}
+		}
+		/** Errores */
+		if($bd->Errores()){
+			$bd->printErrores('GestionTrabajadores::fn_consulta_trabajadorByArea', $ajax);
+		}
+		/** Cierre de la conexion */ 
+		$bd->Cerrar();
+	
+		return $array;
+	}
+	
 }
 
 ?>

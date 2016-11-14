@@ -130,6 +130,41 @@ class GestionArea_Laboral {
 		
 		return $repuesta;
 	}
+	
+	/** @autor	Raphael Lara
+	 *  @mail	lara_d_kli@hotmail.com
+	 *  @date   05/11/2016
+	 */
+	function fn_delete_area_laboral( $cod_area_laboral, $ajax = null, $bd = null ){
+		
+		$repuesta = false;
+		
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		
+		if($bd->iniciar()){
+			/** Sentecia */
+			$bd->setSentencia('DELETE FROM area_laboral WHERE id_area_laboral=?;;');
+			/** Parametros */
+			$bd->setParametro($cod_area_laboral);
+			/** Ejecutamos */
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		/** Errores */
+		if($bd->Errores()){
+			$bd->printErrores('GestionArea_Laboral::fn_delete_area_laboral', $ajax);
+		}
+		/** Cierre de la conexion */ 
+		$bd->Cerrar();
+	
+		return $repuesta;
+	}
 }
 
 ?>

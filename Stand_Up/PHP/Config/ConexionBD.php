@@ -302,7 +302,7 @@ class ConexionBD {
 			foreach ($this->array_erros as $clave => $valor){
 				$mensaje_final.= $this->array_erros[$clave].'<br>';
 			}
-			echo $mesaje;
+			echo $mensaje_final;
 		}
 		
 	}

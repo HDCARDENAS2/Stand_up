@@ -5,49 +5,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="../../CSS/main.css" />
+		<link rel="stylesheet" href="../../CSS/login.css" />
 	</head>
 	
-		<style>
-					html, body {
-						height: 100%;
-					}
-					.LoginContenedor-1 {
-						height: 100%;
-						width: 100%;
-						display: table;
-					}
-					.LoginContenedor-1 {
-						vertical-align: middle;
-						display: table-cell;
-						height: 100%;
-					}
-					.tabla_login {
-						margin: 0 auto;
-					}
-					/* Full-width inputs */
-					input[type=text], input[type=password] {
-						width: 100%;
-						padding: 12px 20px;
-						margin: 8px 0;
-						display: inline-block;
-						border: 1px solid #ccc;
-						box-sizing: border-box;
-					}
-				</style>
-	
-	
 	<body>
-
 		<form  id="forma_login_usuario" name="forma_login_usuario" >
 			<div id="styleLogin">
 				<div id="LoginContenedor-1">
 					<div id="LoginContenedor-2">
-						<table id="tabla_login" align="center" width="100%">
+						<table id="tabla_login">
 							<tr><td><label><b>Username</b></label></td></tr>
 							<tr><td><input type="text"  name="user_name" id="user_name" required></td></tr>
 							<tr><td><label><b>Password</b></label></td></tr>
 							<tr><td><input type="password"  name="user_pass" id="user_pass" required></td></tr>
-							<tr><td><input type="button" value="Login" onclick="fn_validar_login()" ></td></tr>
+							<tr><td><input type="button" value="Login" onclick="fn_validar_login()"></td></tr>
 						</table>
 					</div>
 				</div>
