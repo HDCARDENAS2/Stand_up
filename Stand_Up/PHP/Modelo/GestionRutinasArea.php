@@ -148,5 +148,46 @@ class GestionRutinasArea {
 		return $repuesta;
 	
 	}
+	
+	/** @Autor	hernan cardenas 
+	 *  @Mail	dropimax@gmail.com
+	 *  @Date   05/11/2016
+	 *  @Name   fn_delete_rutinas_area
+	 */
+	
+	function fn_delete_rutinas_area($codigo, $ajax = null,$bd = null){
+	
+		$repuesta = false;
+	
+		if($bd == null){
+			$bd = new ConexionBD();
+		}
+		//Inicio Conexion
+		if($bd->iniciar()){
+			//Sentecia
+			$bd->setSentencia('DELETE FROM rutinas_area WHERE id_rutinas_area=?;');
+			//Parametros
+			$bd->setParametro($codigo);
+			//Se ejecuta la sentencia
+			if($bd->Ejecutar()){
+				$bd->Commit();
+				$repuesta = true;
+			}else{
+				$bd->RollBack();
+			}
+		}
+		//Errores
+		if($bd->Errores()){
+			$bd->printErrores('fn_delete_horariosBD::fn_delete_rutinas_area',$ajax);
+				
+		}
+		//Cierre de conexion
+		$bd->Cerrar();
+	
+		return $repuesta;
+	
+	}
+	
+	
 }
 

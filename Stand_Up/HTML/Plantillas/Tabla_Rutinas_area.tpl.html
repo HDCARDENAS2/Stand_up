@@ -6,10 +6,11 @@
 		<th width="20%">Area laboral</th>
 		<th width="20%">Estado</th>
 		<th width="10%"></th>
+		<th width="10%"></th>
 	</tr>
 	<tbody>
 	{foreach from=$lista_rutina_area key=em item=$rutinasarea}
-	<tr>
+	<tr id="row_{$rutinasarea.id_rutinas_area}">
 		<td>{$rutinasarea.id_rutinas_area}
 		<input type="hidden"  name="id_rutinasarea_{$id_tabla}[]" value="{$rutinasarea.id_rutinas_area}" />
 		</td>
@@ -24,6 +25,9 @@
 		</td>
 		<td>
 		<input type="button"  value="Guardar" onclick="fn_udapte_rutina_area(this.parentNode.parentNode.rowIndex,{$id_tabla});">
+		</td>
+		<td>
+		<input type="button"  value="Eliminar" class="delete" onclick="fn_delete_rutina_area(this.parentNode.parentNode.rowIndex,{$id_tabla},{$rutinasarea.id_rutinas_area});">
 		</td>
 	</tr>
 	{/foreach}

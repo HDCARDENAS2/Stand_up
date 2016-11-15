@@ -63,3 +63,32 @@ function fn_udapte_rutina_area(elemento,id){
 	}	
 
 }
+
+
+/**
+ * Esta funcion elimina rutina area
+ *
+ * @author hernan cardeas
+ *         @email dropimax@gmail.com
+ *         @date 05/11/2016
+ * @access public
+ */
+
+function fn_delete_rutina_area(elemento,id, id_row){
+	
+	elemento--;
+	$("#index_select_tabla").val(elemento);
+	$("#id_tabla").val(id);
+    //peticion ajax
+	var respuesta = Ajax('forma_tabla_rutinas_area',
+			             '../Control/Del_Rutina_areas.php');
+	
+	if(respuesta != null){
+		$("#row_"+id_row).remove();
+		alert('La rutina area fue eliminada correctamente');
+	}	
+
+}
+
+
+
