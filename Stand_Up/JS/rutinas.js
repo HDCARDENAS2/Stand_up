@@ -55,18 +55,46 @@ function fn_registrar_rutinas(){
  * @access public
  */
 
-function fn_update_rutinas(elemento,id){
+
+function fn_update_rutinas(elemento,id, item){
 	
 	elemento--;
 	$("#index_select_tabla").val(elemento);
 	$("#id_tabla").val(id);
 	console.log("actualizar");
     //peticion ajax
+
+    var formData = new FormData($('form')[1]);
+    console.log(formData);
+    var imagen = subirArchivo(formData);
+    $('#url_imagen_'+item).val(imagen);
+    if(imagen != ""){
+
+		var respuesta = Ajax('forma_tabla_rutinas',
+				             '../Control/Mod_rutinas.php');
+		
+		if(respuesta != null){
+			alert('La Rutina fue modificada correctamente');
+			forma_tabla_rutinas.submit();
+		}	
+    }
+
+}
+
+function fn_delete_rutinas(elemento,id, id_row){
+
+	elemento--;
+	$("#index_select_tabla").val(elemento);
+	$("#id_tabla").val(id);
+	
+    //peticion ajax
 	var respuesta = Ajax('forma_tabla_rutinas',
-			             '../Control/Mod_rutinas.php');
+			             '../Control/Del_rutina.php');
 	
 	if(respuesta != null){
-		alert('La Rutina fue modificada correctamente');
-	}	
+		alert('La rutina fue eliminada correctamente');
+		$("#row_"+id_row).remove();
+		///forma_tabla_rutinas.submit();
+	}		
 
 }

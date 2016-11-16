@@ -7,29 +7,21 @@ $o_gestion_rutina = new GestionRutinas();
 //Datos de la vista
 $forma = $_POST;
 //logica
-
 $index      = $forma['index_select_tabla'];
 $id_tabla   = $forma['id_tabla'];
 
 if($index != "" && $id_tabla != ""){
-	
 	$codigo     = $forma['id_rutinas_'.$id_tabla][$index];
-	$url_imagen = $forma['url_imagen_'.$id_tabla][$index];
-	$duracion   = $forma['duracion_'.$id_tabla][$index];
-	$descripcion   = $forma['des_rutina_'.$id_tabla][$index];
-	$clasificacion = $forma['clasificacion_'.$id_tabla][$index];
-	//$ajax->setError("No se pudo modificar la Rutina area.".$codigo);
 	
-		
-	if(!$o_gestion_rutina->fn_update_rutinasBD($codigo,$url_imagen,$duracion,$descripcion,$clasificacion,$ajax)){
-		$ajax->setError("No se pudo modificar la Rutina.");
+	if(!$o_gestion_rutina->fn_delete_rutinasBD($codigo, $ajax)){
+		$ajax->setError("No se puede eliminar la rutina.");
 	}
-	
 	
 }else{
 	$ajax->setError("El codigo index o tabla id esta vacio.");
 }
-
 //retorno objeto ajax
 $ajax->RetornarJSON();
 ?>
+
+

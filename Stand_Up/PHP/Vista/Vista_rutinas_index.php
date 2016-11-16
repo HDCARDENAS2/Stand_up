@@ -1,7 +1,7 @@
 <?php
 require_once('../Config/header.php');
 require_once('../Modelo/GestionRutinas.php');
-require_once('UI_Rutinas.php');
+require_once('/UI_Rutinas.php');
 require_once('../Modelo/GestionClasificacion_Rutina.php');
 require_once('../Config/HTML_LIB.php');
 	
@@ -18,14 +18,12 @@ require_once('../Config/HTML_LIB.php');
     $clasificacion = $obj_clasifica->fn_consulta_clasificaciones();
 	
 	/** Tablas */
-	$htmlRutinas = $obj_ui_rutinas->DibujarTablaRutinas( $rutinas, 1 );
+	$htmlRutinas = $obj_ui_rutinas->DibujarTablaRutinas( $rutinas, 1, $obj_html,$clasificacion);
 	
 	/** Plantilla principal */
 	$tpl_principal->assign( "htmlRutinas", $htmlRutinas );
 	$tpl_principal->assign( "clasificacion",$clasificacion);
 	$tpl_principal->assign( "obj_html",$obj_html);
-	$tpl_principal->assign( "menuhtml", $menuhtml);
-
-	$tpl_principal->display('../../HTML/Plantillas/rutina_index.tpl.html');
+	$tpl_principal->display('../../html/plantillas/rutina_index.tpl.html');
 	
 ?>

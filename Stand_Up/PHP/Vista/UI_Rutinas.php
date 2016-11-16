@@ -9,11 +9,13 @@ class UI_Rutinas {
 	 * @mail	alexalvaradomarquez@gmail.com
 	 * @date	01/11/2016
 	 */
-	function DibujarTablaRutinas( $array, $id ){
-		$tpl_trabajador = new SmartyExt();
-		$tpl_trabajador->assign( "rutinas", $array );
-		$tpl_trabajador->assign( "id_tabla", $id );
-		return $tpl_trabajador->fetch('../../HTML/Plantillas/Tabla_Rutinas.tpl.html');
+	function DibujarTablaRutinas( $array, $id, $obj_html, $clasificacion){
+		$tpl_rutina = new SmartyExt();
+		$tpl_rutina->assign( "rutinas", $array );
+		$tpl_rutina->assign( "id_tabla", $id );
+		$tpl_rutina->assign( "obj_html", $obj_html );
+		$tpl_rutina->assign( "clasificacion", $clasificacion );
+		return $tpl_rutina->fetch('../../html/plantillas/Tabla_Rutinas.tpl.html');
 	}
 }
 

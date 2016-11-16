@@ -1,20 +1,41 @@
-<h3 align="center">Rutinas</h3>
-<table id="tabla_rutina_{$id_tabla}">
+<h3 style="padding-top: 10px" align="center">Rutinas</h3>
+<table id="tabla_rutina_{$id_tabla}" name="tabla_rutina{$id_tabla}">
 	<tr>
 		<th>ID</th>
+		<th></th>
 		<th>Url de imagen</th>
 		<th>Duracion</th>
 		<th>Descripcion</th>
-		<th>ID Clasificacion</th>
+		<th>Clasificacion</th>
+		<th></th>
+		<th></th>
+		<th></th>
 	</tr>
-	
+	<tbody>
 	{foreach from=$rutinas key=em item=rutina}
-	<tr>
+	<tr id="row_{$horario.id_rutinas}">
 		<td>{$rutina.id_rutinas}</td>
-		<td>{$rutina.url_imagen}</td>
-		<td>{$rutina.duracion}</td>
-		<td>{$rutina.des_rutina}</td>
-		<td>{$rutina.id_clasificacion}</td>
+		<input type="hidden" name="id_rutinas_{$id_tabla}[]" value="{$rutina.id_rutinas}"/>
+		<td><img src="../../Imagenes/{$rutina.url_imagen}" width="40" height="40"></td>
+		
+		<td><input type="file" name="url_file_{$id_tabla}[]">{$rutina.url_imagen}
+			<input type="hidden" name="url_imagen_{$id_tabla}[]" id="url_imagen_{$em}" value="/url/imagen" >
+		</td>
+
+		<!-- <td><input type="file" >
+		<input type="hidden" id="url_imagen_{$id_tabla}[]" name="url_imagen_{$id_tabla}[]" value="{$rutina.url_imagen}"  >
+		</td> -->
+		<td><input type="text" name="duracion_{$id_tabla}[]" id="duracion" value="{$rutina.duracion}"></td>
+		<td><input type="text" name="des_rutina_{$id_tabla}[]" id="descripcion" value="{$rutina.des_rutina}"></td>
+		<td>
+		<select name="clasificacion_{$id_tabla}[]">{$obj_html->DibujarCombo($clasificacion,$rutina.id_clasificacion,true)}</select></td>
+		<td>
+			<input type="button"  value="Guardar" onclick="fn_update_rutinas( this.parentNode.parentNode.rowIndex,{$id_tabla}, {$em});">
+		</td>
+		<td>
+			<input type="button"  class="delete" value="Eliminar" onclick="fn_delete_rutinas( this.parentNode.parentNode.rowIndex,{$id_tabla}, {$rutina.id_rutinas});">
+		</td>
 	</tr>
 	{/foreach}
+	</tbody>
 </table>
