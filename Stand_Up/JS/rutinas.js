@@ -12,8 +12,13 @@ function fn_registrar_rutinas(){
 	
 	var duracion = $("#duracion").val();
 	var idclasificacion_rutina  = $("#idclasificacion_rutina").val();
+	var descrecipcion  = $("#descripcion").val();
 	
 	var mensaje = "";
+	
+	if(duracion == ""){
+		mensaje +="Digite la duracion de la descripcion.\n";
+	}
 	
 	if(duracion == ""){
 		mensaje +="Digite la duracion de la rutina.\n";
@@ -23,6 +28,28 @@ function fn_registrar_rutinas(){
         mensaje +="Selecione la clasificacion de la rutina.\n";
 	}
 
+    var re = /[0-9]/;
+
+    if(!re.test(duracion)){
+    	mensaje +="El campo duracion no es numerico.\n";
+    }
+    
+    re = /[A-Za-z0-9]/;
+    
+    if(!re.test(descrecipcion)){
+    	mensaje +="El campo descripcion no es alfa numerico.\n";
+    }
+    
+    
+    if(descrecipcion.length > 200){
+    	mensaje +="El campo duracion tiene como maximo 200 caracteres.\n";
+    }
+    
+    if(duracion.length > 11){
+    	mensaje +="El campo descripcion tiene como maximo 200 caracteres.\n";
+    }
+    	
+ 
 	if(mensaje == ""){
         //peticion ajax
         var formData = new FormData($('form')[0]);
