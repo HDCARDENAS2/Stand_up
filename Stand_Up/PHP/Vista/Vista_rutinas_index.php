@@ -24,6 +24,7 @@ require_once('../Config/HTML_LIB.php');
 	$tpl_principal->assign( "htmlRutinas", $htmlRutinas );
 	$tpl_principal->assign( "clasificacion",$clasificacion);
 	$tpl_principal->assign( "obj_html",$obj_html);
+	$tpl_principal->assign( "menuhtml", $menuhtml);
 	$tpl_principal->display('../../html/plantillas/rutina_index.tpl.html');
 	
 ?>
