@@ -18,9 +18,9 @@
 		</div>
 		
 		<form  id="forma_registro_trabajador" name="forma_registro_trabajador" >
-			<input id="nombres" name="nombres" type="text" placeholder="Nombre">
-			<input id="apellidos" name="apellidos" type="text" placeholder="Apellido">
-			<input id="correo" name="correo" type="email" placeholder="Correo">
+			<input id="nombres" name="nombres" type="text" placeholder="Nombre" onkeydown="limit_input(this); validate_input(this);" onkeyup="limit_input(this); validate_input(this);">
+			<input id="apellidos" name="apellidos" type="text" placeholder="Apellido" onkeydown="limit_input(this); validate_input(this);" onkeyup="limit_input(this); validate_input(this);">
+			<input id="correo" name="correo" type="email" placeholder="Correo" onkeydown="limit_input(this);" onkeyup="limit_input(this);" onblur="validate_mail(this);">
 			<label for="cmb_area_laboral" >Area Laboral</label>
 				<select id="cmb_area_laboral" name="cmb_area_laboral">{$obj_html->DibujarCombo($area_laboral)}</select>
 			<div align="center" style="padding-top: 10px">

@@ -72,3 +72,29 @@ function fn_delete_area_laboral( elemento, id, id_row ){
 		$("#row_"+id_row).remove();
 	}	
 }
+
+/**
+ * @author	Raphael Lara
+ * @email	lara_d_kli@hotmail.com
+ * @date	13/11/2016
+ */
+function limit_input(element){
+	var max_chars = 45;
+	
+	if(element.value.length > max_chars) {
+		element.value = element.value.substr(0, max_chars);
+	}
+}
+
+/**
+ * @author	Raphael Lara
+ * @email	lara_d_kli@hotmail.com
+ * @date	13/11/2016
+ */
+function validate_input(element){
+	var lenght_word = element.value.length;
+
+	if (!/^[a-zA-Z]*$/g.test(element.value)) {
+		element.value = element.value.substr(0, lenght_word - 1);
+	}
+}
