@@ -12,11 +12,18 @@ function fn_registrar_clasificacion(){
 	var descripcion   = $("#descripcion").val();
 	
 	var mensaje = "";
+
 	
 	if(descripcion == ""){
 		mensaje ="Digite una descripcion.\n";
 	}
-		
+	var re = /[^A-Za-z0-9\s]/;
+	if(re.test(descripcion)){
+    	mensaje +="El campo descripcion no es alfa numerico.\n";
+    }	
+    if(descripcion.length > 45){
+    	mensaje +="El campo descripcion tiene como maximo 45 caracteres.\n";
+    }
 	if(mensaje == ""){
         //peticion ajax
         console.log("Entro a guardar");
@@ -24,7 +31,7 @@ function fn_registrar_clasificacion(){
 				             '../Control/Add_clasificacion.php');
 		
 		if(respuesta != null){
-			alert('La Clasificaion se inserto correctamente');
+			alert('La Clasificaion se inserto correctamenteee');
 			//submit forma
 			forma_registro_clasificacion.submit();
 		}	

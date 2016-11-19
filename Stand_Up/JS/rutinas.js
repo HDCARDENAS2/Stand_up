@@ -28,25 +28,24 @@ function fn_registrar_rutinas(){
         mensaje +="Selecione la clasificacion de la rutina.\n";
 	}
 
-    var re = /[0-9]/;
+    var re = /[^0-9]/;
 
-    if(!re.test(duracion)){
+    if(re.test(duracion)){
     	mensaje +="El campo duracion no es numerico.\n";
     }
     
-    re = /[A-Za-z0-9]/;
-    
-    if(!re.test(descrecipcion)){
+    re = /[^A-Za-z0-9\s]/;
+	if(re.test(descrecipcion)){
     	mensaje +="El campo descripcion no es alfa numerico.\n";
     }
     
     
     if(descrecipcion.length > 200){
-    	mensaje +="El campo duracion tiene como maximo 200 caracteres.\n";
+    	mensaje +="El campo descripcion tiene como maximo 200 caracteres.\n";
     }
     
     if(duracion.length > 11){
-    	mensaje +="El campo descripcion tiene como maximo 200 caracteres.\n";
+    	mensaje +="El campo duracion tiene como maximo 11 caracteres.\n";
     }
     	
  
